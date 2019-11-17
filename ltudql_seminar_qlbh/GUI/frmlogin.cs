@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 
 namespace ltudql_seminar_qlbh
 {
-    public partial class frmlogin : Form
+    public partial class frmlogin : MaterialForm
     {
-        ConnectionToSQL Conn = new ConnectionToSQL();
         public frmlogin()
         {
             InitializeComponent();
+            //var skinManager = MaterialSkinManager.Instance;
+            //skinManager.AddFormToManage(this);
+            //skinManager.Theme = MaterialSkinManager.Themes.DARK;
+            //skinManager.ColorScheme = new ColorScheme(Primary.LightBlue100, Primary.BlueGrey800, Primary.LightBlue500, Accent.LightBlue200, TextShade.WHITE);
         }
 
         private void btthoat_Click(object sender, EventArgs e)
@@ -25,24 +26,25 @@ namespace ltudql_seminar_qlbh
 
         private void btxacnhan_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt= Conn.GetData("select * from NHANVIEN where TENDANGNHAP='" + tbdangnhap.Text + "' and MATKHAU='" + tbmatkhau.Text + "'");
-            if(dt.Rows.Count>0)
+            var bus = new BUSLogin();
+            if(bus.isCorrect(tbUsername.Text,tbPassword.Text) ==true)
             {
-                MessageBox.Show("Đăng nhập thành công", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmmain f = new frmmain(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString());
-                this.Hide();
-                f.ShowDialog();
+                bus.getRole(tbUsername.Text);
+                MessageBox.Show("dang nhap thanh cong");
             }
             else
             {
-                MessageBox.Show("Đăng nhập thất bại", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("sai mat khau");
             }
         }
 
         private void cbnhomatkhau_CheckedChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Lưu mật khẩu thành công");
+        }
+
+        private void frmlogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
