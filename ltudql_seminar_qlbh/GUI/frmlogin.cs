@@ -1,6 +1,4 @@
-﻿using MaterialSkin;
-using MaterialSkin.Controls;
-using System;
+﻿using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -8,15 +6,11 @@ using BUS;
 
 namespace ltudql_seminar_qlbh
 {
-    public partial class frmlogin : MaterialForm
+    public partial class frmlogin : Form
     {
         public frmlogin()
         {
             InitializeComponent();
-            //var skinManager = MaterialSkinManager.Instance;
-            //skinManager.AddFormToManage(this);
-            //skinManager.Theme = MaterialSkinManager.Themes.DARK;
-            //skinManager.ColorScheme = new ColorScheme(Primary.LightBlue100, Primary.BlueGrey800, Primary.LightBlue500, Accent.LightBlue200, TextShade.WHITE);
         }
 
         private void btthoat_Click(object sender, EventArgs e)
@@ -29,8 +23,13 @@ namespace ltudql_seminar_qlbh
             var bus = new BUSLogin();
             if(bus.isCorrect(tbUsername.Text,tbPassword.Text) ==true)
             {
-                bus.getRole(tbUsername.Text);
-                MessageBox.Show("dang nhap thanh cong");
+                string role = bus.getRole(tbUsername.Text);
+                string rolename = bus.getRoleName(tbUsername.Text);
+                RibbonFormMain rfm = new RibbonFormMain();
+                rfm.Text = rolename + " - Phần mềm quản lý bán hàng";
+                this.Visible = false;
+                rfm.ShowDialog();
+                this.Close();
             }
             else
             {

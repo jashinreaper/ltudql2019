@@ -23,5 +23,12 @@ namespace DAL
             DataTable dt = cq.GetData(query);
             return dt.Rows[0][0].ToString();
         }
+
+        public string getRoleName(string username)
+        {
+            string query = string.Format($"select rolename from Roles where roleid='{getRole(username)}'");
+            DataTable dt = cq.GetData(query);
+            return dt.Rows[0][0].ToString();
+        }
     }
 }

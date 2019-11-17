@@ -24,5 +24,10 @@ namespace BUS
         {
             return dl.getRole(username);
         }
+
+        public string getRoleName(string username)
+        {
+            return dl.getRoleName(username);
+        }
     }
 }

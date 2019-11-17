@@ -70,6 +70,7 @@
             this.tbPassword.Location = new System.Drawing.Point(220, 128);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(214, 20);
             this.tbPassword.TabIndex = 3;
             // 
@@ -121,7 +122,8 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmlogin";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đăng nhập - Phần mềm quản lý bán hàng";
             this.Load += new System.EventHandler(this.frmlogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
