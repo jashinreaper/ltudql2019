@@ -24,14 +24,18 @@ namespace ltudql_seminar_qlbh.MainForm
         {
             BUSUserManager um = new BUSUserManager();
             DataTable dt = um.getUserList();
-            dt.Columns[0].ColumnName = "ID";
-            dt.Columns[1].ColumnName = "Tên người dùng";
-            dt.Columns[2].ColumnName = "Tên vai trò";
-            dt.Columns[3].ColumnName = "Diễn giải";
+            dt.Columns[0].ColumnName = "STT";
+            dt.Columns[1].ColumnName = "ID";
+            dt.Columns[2].ColumnName = "Tên tài khoản";
+            dt.Columns[3].ColumnName = "Tên người dùng";
+            dt.Columns[4].ColumnName = "Tên vai trò";
+            dt.Columns[5].ColumnName = "Diễn giải";
+            gridColumn5.FieldName = "STT";
             gridColumn1.FieldName = "ID";
             gridColumn2.FieldName = "Tên người dùng";
             gridColumn3.FieldName = "Tên vai trò";
             gridColumn4.FieldName = "Diễn giải";
+            gridColumn6.FieldName = "Tên tài khoản";
             dgvQuanlynguoidung.DataSource = dt;
         }
     }

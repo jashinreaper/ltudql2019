@@ -13,7 +13,7 @@ namespace DAL
         static CommonQuery cq = new CommonQuery();
         public DataTable getUserList()
         {
-            string query = string.Format($"select u.userid,u.username,r.rolename,r.roledes from Users u join Roles r on u.roleid = r.roleid");
+            string query = string.Format($"select u.id,u.userid,u.username,u.userfullname,r.rolename,r.roledes from Users u join Roles r on u.roleid = r.roleid");
             DataTable dt = cq.GetData(query);
             return dt;
         }

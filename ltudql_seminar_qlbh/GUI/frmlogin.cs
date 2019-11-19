@@ -17,7 +17,6 @@ namespace ltudql_seminar_qlbh
         {
             Application.Exit();
         }
-
         private void btxacnhan_Click(object sender, EventArgs e)
         {
             var bus = new BUSLogin();
@@ -33,7 +32,7 @@ namespace ltudql_seminar_qlbh
             }
             else
             {
-                MessageBox.Show("sai mat khau");
+                MessageBox.Show("Sai mật khẩu!");
             }
         }
 

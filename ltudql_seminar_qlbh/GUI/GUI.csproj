@@ -72,22 +72,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBaoMat\frmUser_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoMat\frmUser_Update.Designer.cs">
+      <DependentUpon>frmUser_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaoMat\frmUser_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoMat\frmUser_Add.Designer.cs">
+      <DependentUpon>frmUser_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmlogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmlogin.Designer.cs">
       <DependentUpon>frmlogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm\frmRole.cs">
+    <Compile Include="frmBaoMat\frmRole.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm\frmRole.Designer.cs">
+    <Compile Include="frmBaoMat\frmRole.Designer.cs">
       <DependentUpon>frmRole.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm\frmUsers.cs">
+    <Compile Include="frmBaoMat\frmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm\frmUsers.Designer.cs">
+    <Compile Include="frmBaoMat\frmUsers.Designer.cs">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -98,13 +110,19 @@
     <Compile Include="RibbonFormMain.Designer.cs">
       <DependentUpon>RibbonFormMain.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmBaoMat\frmUser_Update.resx">
+      <DependentUpon>frmUser_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoMat\frmUser_Add.resx">
+      <DependentUpon>frmUser_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\frmRole.resx">
+    <EmbeddedResource Include="frmBaoMat\frmRole.resx">
       <DependentUpon>frmRole.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\frmUsers.resx">
+    <EmbeddedResource Include="frmBaoMat\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -146,6 +164,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="QuanLyBanHang.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="frmDuLieu\" />
+    <Folder Include="frmHeThong\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

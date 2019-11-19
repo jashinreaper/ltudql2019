@@ -74,5 +74,23 @@ namespace ltudql_seminar_qlbh
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem2_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn quay lại màn hình đăng nhập chứ?", "Chấp nhận?", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                frmlogin rfm = new frmlogin();
+                //rfm.Text = rolename + " - Phần mềm quản lý bán hàng";
+                this.Visible = false;
+                rfm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                // If 'No', do something here.
+            }
+            
+        }
     }
 }

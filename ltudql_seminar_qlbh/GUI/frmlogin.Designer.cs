@@ -35,6 +35,7 @@
             this.cbnhomatkhau = new System.Windows.Forms.CheckBox();
             this.btxacnhan = new System.Windows.Forms.Button();
             this.btthoat = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -108,11 +109,21 @@
             this.btthoat.UseVisualStyleBackColor = true;
             this.btthoat.Click += new System.EventHandler(this.btthoat_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(220, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(153, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "username: admin - password: 1";
+            // 
             // frmlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btthoat);
             this.Controls.Add(this.btxacnhan);
             this.Controls.Add(this.cbnhomatkhau);
@@ -139,6 +150,7 @@
         private System.Windows.Forms.CheckBox cbnhomatkhau;
         private System.Windows.Forms.Button btxacnhan;
         private System.Windows.Forms.Button btthoat;
+        private System.Windows.Forms.Label label3;
     }
 }
 
