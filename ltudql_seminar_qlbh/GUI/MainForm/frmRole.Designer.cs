@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeList1 = new DevExpress.XtraTreeList.TreeList();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRole));
+            this.treelistVaitro = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
@@ -39,13 +40,16 @@
             this.treeListColumn7 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn8 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn9 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.treelistVaitro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.SuspendLayout();
             // 
-            // treeList1
+            // treelistVaitro
             // 
-            this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.treelistVaitro.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.treeListColumn1,
             this.treeListColumn2,
             this.treeListColumn3,
@@ -55,11 +59,11 @@
             this.treeListColumn7,
             this.treeListColumn8,
             this.treeListColumn9});
-            this.treeList1.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.treeList1.Location = new System.Drawing.Point(-1, 12);
-            this.treeList1.Name = "treeList1";
-            this.treeList1.BeginUnboundLoad();
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.treelistVaitro.Location = new System.Drawing.Point(-1, 38);
+            this.treelistVaitro.Name = "treelistVaitro";
+            this.treelistVaitro.BeginUnboundLoad();
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -69,7 +73,7 @@
             null,
             null,
             null}, -1);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -79,7 +83,7 @@
             null,
             null,
             null}, 0);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -89,7 +93,7 @@
             null,
             null,
             null}, 0);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -99,7 +103,7 @@
             null,
             null,
             null}, 2);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -109,7 +113,7 @@
             null,
             null,
             null}, 2);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -119,7 +123,7 @@
             null,
             null,
             null}, 2);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -129,7 +133,7 @@
             null,
             null,
             null}, 2);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -139,7 +143,7 @@
             null,
             null,
             null}, 2);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -149,7 +153,7 @@
             null,
             null,
             null}, 2);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -159,7 +163,7 @@
             null,
             null,
             null}, 0);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -169,7 +173,7 @@
             null,
             null,
             null}, 0);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -179,7 +183,7 @@
             null,
             null,
             null}, 0);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -189,7 +193,7 @@
             null,
             null,
             null}, 0);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -199,7 +203,7 @@
             null,
             null,
             null}, -1);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -209,7 +213,7 @@
             null,
             null,
             null}, -1);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -219,7 +223,7 @@
             null,
             null,
             null}, -1);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -229,7 +233,7 @@
             null,
             null,
             null}, -1);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -239,7 +243,7 @@
             null,
             null,
             null}, -1);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -249,7 +253,7 @@
             null,
             null,
             null}, -1);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -259,7 +263,7 @@
             null,
             null,
             null}, -1);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -269,7 +273,7 @@
             null,
             null,
             null}, -1);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -279,7 +283,7 @@
             null,
             null,
             null}, -1);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -289,7 +293,7 @@
             null,
             null,
             null}, -1);
-            this.treeList1.AppendNode(new object[] {
+            this.treelistVaitro.AppendNode(new object[] {
             null,
             null,
             null,
@@ -299,11 +303,12 @@
             null,
             null,
             null}, -1);
-            this.treeList1.EndUnboundLoad();
-            this.treeList1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.treelistVaitro.EndUnboundLoad();
+            this.treelistVaitro.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.treeList1.Size = new System.Drawing.Size(1062, 352);
-            this.treeList1.TabIndex = 0;
+            this.treelistVaitro.Size = new System.Drawing.Size(1062, 326);
+            this.treelistVaitro.TabIndex = 0;
+            this.treelistVaitro.Load += new System.EventHandler(this.treelistVaitro_Load);
             // 
             // treeListColumn1
             // 
@@ -435,15 +440,45 @@
             this.treeListColumn9.VisibleIndex = 8;
             this.treeListColumn9.Width = 60;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(12, 2);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(125, 30);
+            this.simpleButton1.TabIndex = 1;
+            this.simpleButton1.Text = "Thêm vai trò";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(153, 2);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(125, 30);
+            this.simpleButton2.TabIndex = 2;
+            this.simpleButton2.Text = "Sửa thông tin";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(300, 2);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(125, 30);
+            this.simpleButton3.TabIndex = 3;
+            this.simpleButton3.Text = "Xóa vai trò";
+            // 
             // frmRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 361);
-            this.Controls.Add(this.treeList1);
+            this.Controls.Add(this.simpleButton3);
+            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.treelistVaitro);
             this.Name = "frmRole";
             this.Text = "Cập nhật vai trò";
-            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treelistVaitro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.ResumeLayout(false);
 
@@ -451,7 +486,7 @@
 
         #endregion
 
-        private DevExpress.XtraTreeList.TreeList treeList1;
+        private DevExpress.XtraTreeList.TreeList treelistVaitro;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
@@ -462,5 +497,8 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn7;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn8;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn9;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }

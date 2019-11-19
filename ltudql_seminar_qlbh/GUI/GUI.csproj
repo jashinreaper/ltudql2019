@@ -139,7 +139,13 @@
       <Project>{151a854e-14c1-4ccf-9de8-06dac26e8ce1}</Project>
       <Name>BUS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{09d127be-537b-43e2-a03c-9716a1442555}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="QuanLyBanHang.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
