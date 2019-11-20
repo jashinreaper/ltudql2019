@@ -38,7 +38,7 @@ namespace ltudql_seminar_qlbh.MainForm
             //root
             TreeListNode parentForRootNodes = null;
             TreeListNode rootNode = treelistVaitro.AppendNode(
-                new object[] { "Hệ thống", "true", "true", "true", "true", "true", "true", "true", "true", "H0","","true" },
+                new object[] { "Hệ thống", "True", "True", "True", "True", "True", "True", "True", "True", "H0","", "True" },
                 parentForRootNodes);
             //level1
             var hethong = treelistVaitro.AppendNode(new object[] { "Hệ thống", "true", "true", "true", "true", "true", "true", "true", "true", "H1", "", "true" }, rootNode);
@@ -48,8 +48,8 @@ namespace ltudql_seminar_qlbh.MainForm
             treelistVaitro.AppendNode(new object[] { "Quản lí người dùng", "true", "true", "true", "true", "true", "true", "true", "true", "B2", "", "true" }, baomat);
             treelistVaitro.AppendNode(new object[] { "Vai trò và quyền hạn", "true", "true", "true", "true", "true", "true", "true", "true", "B3", "", "true" }, baomat);
             treelistVaitro.AppendNode(new object[] { "Nhật ký hệ thống", "true", "true", "true", "true", "true", "true", "true", "true", "B4", "", "true" }, baomat);
-            treelistVaitro.AppendNode(new object[] { "Sao lưu", "true", "true", "true", "true", "true", "true", "true", "true", "true" }, dulieu);
-            treelistVaitro.AppendNode(new object[] { "Phục hồi", "true", "true", "true", "true", "true", "true", "true", "true", "true" }, dulieu);
+            treelistVaitro.AppendNode(new object[] { "Sao lưu", "true", "true", "true", "true", "true", "true", "true", "true", "D2", "", "true" }, dulieu);
+            treelistVaitro.AppendNode(new object[] { "Phục hồi", "true", "true", "true", "true", "true", "true", "true", "true", "D3", "", "true" }, dulieu);
             treelistVaitro.AppendNode(new object[] { "Sửa chữa", "true", "true", "true", "true", "true", "true", "true", "true", "D4", "", "true" }, dulieu);
             treelistVaitro.EndUnboundLoad();
 
@@ -78,7 +78,7 @@ namespace ltudql_seminar_qlbh.MainForm
                     }
                 }
             }
-
+            treelistVaitro.Refresh();
             treelistVaitro.ExpandAll();
         }
 

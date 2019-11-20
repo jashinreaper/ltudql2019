@@ -56,6 +56,7 @@ select * from Roles
 
 
 
+
 -- KHACHANG
 CREATE TABLE KHACHHANG(
 	MAKH	char(4) not null,	
