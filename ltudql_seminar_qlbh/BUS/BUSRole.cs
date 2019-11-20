@@ -17,5 +17,16 @@ namespace BUS
 
             return dt;
         }
+
+        public bool updateRoleList(DataTable dt)
+        {
+            DALRole um = new DALRole();
+            if(um.updateRoleList(dt))
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

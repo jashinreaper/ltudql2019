@@ -40,6 +40,10 @@
             this.treeListColumn7 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn8 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn9 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn10 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn12 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn13 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -66,6 +70,7 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.treelistVaitro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -102,13 +107,17 @@
             this.treeListColumn6,
             this.treeListColumn7,
             this.treeListColumn8,
-            this.treeListColumn9});
+            this.treeListColumn9,
+            this.treeListColumn10,
+            this.treeListColumn12,
+            this.treeListColumn13});
             this.treelistVaitro.Cursor = System.Windows.Forms.Cursors.SizeWE;
             this.treelistVaitro.Location = new System.Drawing.Point(12, 186);
             this.treelistVaitro.Name = "treelistVaitro";
             this.treelistVaitro.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemCheckEdit1});
-            this.treelistVaitro.Size = new System.Drawing.Size(1036, 163);
+            this.repositoryItemCheckEdit1,
+            this.repositoryItemCheckEdit2});
+            this.treelistVaitro.Size = new System.Drawing.Size(1036, 336);
             this.treelistVaitro.TabIndex = 0;
             this.treelistVaitro.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treelistVaitro_FocusedNodeChanged);
             this.treelistVaitro.Load += new System.EventHandler(this.treelistVaitro_Load);
@@ -122,6 +131,7 @@
             this.treeListColumn1.Caption = "Chức năng";
             this.treeListColumn1.FieldName = "Chức năng";
             this.treeListColumn1.Name = "treeListColumn1";
+            this.treeListColumn1.OptionsColumn.ReadOnly = true;
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
             this.treeListColumn1.Width = 172;
@@ -243,6 +253,30 @@
             this.treeListColumn9.VisibleIndex = 8;
             this.treeListColumn9.Width = 60;
             // 
+            // treeListColumn10
+            // 
+            this.treeListColumn10.Caption = "roleID";
+            this.treeListColumn10.FieldName = "roleID";
+            this.treeListColumn10.Name = "treeListColumn10";
+            // 
+            // treeListColumn12
+            // 
+            this.treeListColumn12.Caption = "roleDes";
+            this.treeListColumn12.FieldName = "roleDes";
+            this.treeListColumn12.Name = "treeListColumn12";
+            // 
+            // treeListColumn13
+            // 
+            this.treeListColumn13.Caption = "isActived";
+            this.treeListColumn13.ColumnEdit = this.repositoryItemCheckEdit2;
+            this.treeListColumn13.FieldName = "isActived";
+            this.treeListColumn13.Name = "treeListColumn13";
+            // 
+            // repositoryItemCheckEdit2
+            // 
+            this.repositoryItemCheckEdit2.AutoHeight = false;
+            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
+            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.label2);
@@ -255,7 +289,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1060, 361);
+            this.layoutControl1.Size = new System.Drawing.Size(1060, 534);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -297,6 +331,7 @@
             this.checkEdit1.Size = new System.Drawing.Size(503, 20);
             this.checkEdit1.StyleController = this.layoutControl2;
             this.checkEdit1.TabIndex = 8;
+            this.checkEdit1.CheckStateChanged += new System.EventHandler(this.checkEdit1_CheckStateChanged);
             // 
             // textEdit3
             // 
@@ -305,6 +340,7 @@
             this.textEdit3.Size = new System.Drawing.Size(458, 20);
             this.textEdit3.StyleController = this.layoutControl2;
             this.textEdit3.TabIndex = 7;
+            this.textEdit3.EditValueChanged += new System.EventHandler(this.textEdit3_EditValueChanged);
             // 
             // textEdit2
             // 
@@ -313,11 +349,13 @@
             this.textEdit2.Size = new System.Drawing.Size(460, 20);
             this.textEdit2.StyleController = this.layoutControl2;
             this.textEdit2.TabIndex = 5;
+            this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
             // 
             // textEdit1
             // 
             this.textEdit1.Location = new System.Drawing.Point(55, 12);
             this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.ReadOnly = true;
             this.textEdit1.Size = new System.Drawing.Size(458, 20);
             this.textEdit1.StyleController = this.layoutControl2;
             this.textEdit1.TabIndex = 4;
@@ -389,6 +427,7 @@
             this.simpleButton3.StyleController = this.layoutControl1;
             this.simpleButton3.TabIndex = 3;
             this.simpleButton3.Text = "Đóng";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // label1
             // 
@@ -407,6 +446,7 @@
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 2;
             this.simpleButton2.Text = "Lưu";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // Root
             // 
@@ -420,7 +460,7 @@
             this.layoutControlItem8,
             this.layoutControlItem11});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1060, 361);
+            this.Root.Size = new System.Drawing.Size(1060, 534);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -428,7 +468,7 @@
             this.layoutControlItem1.Control = this.treelistVaitro;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 174);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1040, 167);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1040, 340);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -481,12 +521,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1060, 361);
+            this.ClientSize = new System.Drawing.Size(1060, 534);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmRole";
             this.Text = "Cập nhật vai trò";
             ((System.ComponentModel.ISupportInitialize)(this.treelistVaitro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -551,5 +592,9 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn10;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn12;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn13;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
     }
 }

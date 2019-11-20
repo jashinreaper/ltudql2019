@@ -34,6 +34,7 @@ rprint bit,
 rwrite bit,
 rread bit,
 isactive bit,
+parentid varchar(10)
 )
 
 alter table Users
@@ -42,12 +43,10 @@ foreign key (roleid)
 references Roles(roleid)
 
 
-insert into Roles values('H0','Administrator','abcxyt',1,1,1,1,1,1,1,1,1)
-insert into Roles values('H1','Staff','abcczxca',0,0,0,1,0,1,0,1,1)
-insert into Roles values('B1','Staff2','abcczxca',0,0,0,1,0,1,0,1,0)
-insert into Roles values('B2','Staff3','abcczxca',0,0,0,1,0,1,0,1,1)
-insert into Users values('001','pvqui','123',N'Võ Cao Tuấn','H1')
-insert into Users values('002','admin','1',N'Trương Bá Hổ','H1')
+insert into Roles values('001','Administrator','abcxyt',1,1,1,1,1,1,1,1,1,'0')
+insert into Roles values('002','Staff','abcczxca',0,0,0,1,0,1,0,1,1,'002')
+insert into Users values('001','pvqui','123',N'Võ Cao Tuấn','001')
+insert into Users values('002','admin','1',N'Trương Bá Hổ','001')
 
 
 select * from Users
