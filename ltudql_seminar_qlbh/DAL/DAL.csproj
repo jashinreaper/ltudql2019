@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectToSql.cs" />
+    <Compile Include="DALHangHoa.cs" />
     <Compile Include="DALLogin.cs" />
     <Compile Include="DALRole.cs" />
     <Compile Include="DALUserManager.cs" />

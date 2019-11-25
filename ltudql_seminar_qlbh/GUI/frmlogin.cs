@@ -3,6 +3,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using BUS;
+using DTO;
 
 namespace ltudql_seminar_qlbh
 {
@@ -22,10 +23,10 @@ namespace ltudql_seminar_qlbh
             var bus = new BUSLogin();
             if(bus.isCorrect(tbUsername.Text,tbPassword.Text) ==true)
             {
-                string role = bus.getRole(tbUsername.Text);
-                string rolename = bus.getRoleName(tbUsername.Text);
+                DTOcurrentUser.proleid = bus.getRole(tbUsername.Text);
+                DTOcurrentUser.prolename = bus.getRoleName(tbUsername.Text);
                 RibbonFormMain rfm = new RibbonFormMain();
-                rfm.Text = rolename + " - Phần mềm quản lý bán hàng";
+                rfm.Text = DTOcurrentUser.prolename + " - Phần mềm quản lý bán hàng";
                 this.Visible = false;
                 rfm.ShowDialog();
                 this.Close();

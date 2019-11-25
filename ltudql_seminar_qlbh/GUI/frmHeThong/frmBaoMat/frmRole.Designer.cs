@@ -68,6 +68,8 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.label3 = new System.Windows.Forms.Label();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.treelistVaitro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
@@ -94,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // treelistVaitro
@@ -117,7 +120,7 @@
             this.treelistVaitro.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2});
-            this.treelistVaitro.Size = new System.Drawing.Size(1036, 336);
+            this.treelistVaitro.Size = new System.Drawing.Size(1036, 312);
             this.treelistVaitro.TabIndex = 0;
             this.treelistVaitro.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treelistVaitro_FocusedNodeChanged);
             this.treelistVaitro.Load += new System.EventHandler(this.treelistVaitro_Load);
@@ -279,6 +282,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.label3);
             this.layoutControl1.Controls.Add(this.label2);
             this.layoutControl1.Controls.Add(this.panelControl1);
             this.layoutControl1.Controls.Add(this.simpleButton3);
@@ -458,7 +462,8 @@
             this.layoutControlItem3,
             this.layoutControlItem5,
             this.layoutControlItem8,
-            this.layoutControlItem11});
+            this.layoutControlItem11,
+            this.layoutControlItem4});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1060, 534);
             this.Root.TextVisible = false;
@@ -468,7 +473,7 @@
             this.layoutControlItem1.Control = this.treelistVaitro;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 174);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1040, 340);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1040, 316);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -517,6 +522,23 @@
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(12, 502);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1036, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "label3";
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.label3;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 490);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(1040, 24);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // frmRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,6 +573,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -596,5 +619,7 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn12;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn13;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
+        private System.Windows.Forms.Label label3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

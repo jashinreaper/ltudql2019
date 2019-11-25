@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using ltudql_seminar_qlbh.MainForm;
+using ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac;
+using ltudql_seminar_qlbh.frmHeThong.frmHeThong;
+using ltudql_seminar_qlbh.frmHeThong.frmBaoMat;
 
 namespace ltudql_seminar_qlbh
 {
@@ -22,10 +25,10 @@ namespace ltudql_seminar_qlbh
         private void RibbonFormMain_Load(object sender, EventArgs e)
         {
             frmRole frm = new frmRole();
-            foreach (var item in MdiChildren)
-            {
-                item.Close();
-            }
+            //foreach (var item in MdiChildren)
+            //{
+            //    item.Close();
+            //}
             frm.MdiParent = this;
             frm.Show();
         }
@@ -43,10 +46,10 @@ namespace ltudql_seminar_qlbh
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmRole frm = new frmRole();
-            foreach (var item in MdiChildren)
-            {
-                item.Close();
-            }
+            //foreach (var item in MdiChildren)
+            //{
+            //    item.Close();
+            //}
             frm.MdiParent = this;
             frm.Show();
         }
@@ -67,10 +70,10 @@ namespace ltudql_seminar_qlbh
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmUsers frm = new frmUsers();
-            foreach (var item in MdiChildren)
-            {
-                item.Close();
-            }
+            //foreach (var item in MdiChildren)
+            //{
+            //    item.Close();
+            //}
             frm.MdiParent = this;
             frm.Show();
         }
@@ -91,6 +94,29 @@ namespace ltudql_seminar_qlbh
                 // If 'No', do something here.
             }
             
+        }
+
+        private void barButtonItem21_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmHangHoa frm = new frmHangHoa();
+            //foreach (var item in MdiChildren)
+            //{
+            //    item.Close();
+            //}
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmThongTin frm = new frmThongTin();
+            frm.Show();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmDoiMatKhau frm = new frmDoiMatKhau();
+            frm.Show();
         }
     }
 }

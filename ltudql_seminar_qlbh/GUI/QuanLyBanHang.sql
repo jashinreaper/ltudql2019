@@ -53,12 +53,12 @@ insert into Users values('002','admin','1',N'Trương Bá Hổ','H1')
 select * from Users
 select * from Roles
 
-
-
+select * from SANPHAM
 
 
 -- KHACHANG
 CREATE TABLE KHACHHANG(
+	id int identity(1,1),
 	MAKH	char(4) not null,	
 	HOTEN	varchar(40),
 	DCHI	varchar(50),
@@ -71,6 +71,7 @@ CREATE TABLE KHACHHANG(
 ---------------------------------------------
 -- NHANVIEN
 CREATE TABLE NHANVIEN(
+	id int identity(1,1),
 	MANV	char(4) not null,	
 	HOTEN	varchar(40),
 	SODT	varchar(20),
@@ -80,6 +81,7 @@ CREATE TABLE NHANVIEN(
 ---------------------------------------------
 -- SANPHAM
 CREATE TABLE SANPHAM(
+	id int identity(1,1),
 	MASP	char(4) not null,
 	TENSP	varchar(40),
 	DVT	varchar(20),
@@ -90,6 +92,7 @@ CREATE TABLE SANPHAM(
 ---------------------------------------------
 -- HOADON
 CREATE TABLE HOADON(
+	id int identity(1,1),
 	SOHD	int not null,
 	NGHD 	smalldatetime,
 	MAKH 	char(4),
@@ -100,6 +103,7 @@ CREATE TABLE HOADON(
 ---------------------------------------------
 -- CTHD
    CREATE TABLE CTHD(
+   id int identity(1,1),
 	SOHD	int,
 	MASP	char(4),
 	SL	int,
