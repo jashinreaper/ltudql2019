@@ -8,7 +8,8 @@ go
 
 use QuanLyBanHang
 go
-
+---------------------------------------GO-----------------------
+--TAB HETHONG---------------------
 create table Users
 (
 id int identity(1,1),
@@ -36,6 +37,26 @@ rread bit,
 isactive bit,
 )
 
+create table THONGTIN
+(
+tendonvi nvarchar(50),
+diachi nvarchar(100),
+dienthoai varchar(11),
+fax varchar(11),
+website varchar(50),
+email varchar(50),
+linhvuc nvarchar(30),
+masothue varchar(30),
+gpkd varchar(30),
+)
+
+create table LINHVUC
+(
+id int identity(1,1),
+malinhvuc varchar(10),
+tenlinhvuc nvarchar(30)
+)
+
 alter table Users
 add
 foreign key (roleid)
@@ -46,15 +67,20 @@ insert into Roles values('H0','Administrator','abcxyt',1,1,1,1,1,1,1,1,1)
 insert into Roles values('H1','Staff','abcczxca',0,0,0,1,0,1,0,1,1)
 insert into Roles values('B1','Staff2','abcczxca',0,0,0,1,0,1,0,1,0)
 insert into Roles values('B2','Staff3','abcczxca',0,0,0,1,0,1,0,1,1)
+
 insert into Users values('001','pvqui','123',N'Võ Cao Tuấn','H1')
 insert into Users values('002','admin','1',N'Trương Bá Hổ','H1')
 
+insert into LINHVUC values('A001',N'Kinh Doanh')
+insert into LINHVUC values('A002',N'Thương mại')
+insert into LINHVUC values('A003',N'Bất động sản')
+
+insert into THONGTIN values('A003','A003','A003','A003','A003','A003','A003','A003','A003')
 
 select * from Users
 select * from Roles
 
-select * from SANPHAM
-
+--TAB DANHMUC----------------------
 
 -- KHACHANG
 CREATE TABLE KHACHHANG(

@@ -8,11 +8,11 @@ using DAL;
 using DTO;
 namespace BUS
 {
-    public class BUSHangHoa
+    public class BUSBaoMat
     {
         public DataTable getHangHoa()
         {
-            DALHangHoa um = new DALHangHoa();
+            DALKhoHang um = new DALKhoHang();
 
             DataTable dt = um.getHangHoa();
 
@@ -20,7 +20,7 @@ namespace BUS
         }
         public int removeHangHoa(string mahanghoa)
         {
-            DALHangHoa um = new DALHangHoa();
+            DALKhoHang um = new DALKhoHang();
 
             int dt = um.removeHangHoa(mahanghoa);
 
@@ -29,7 +29,7 @@ namespace BUS
 
         public bool insertHangHoa(DTOHangHoa hanghoa)
         {
-            DALHangHoa um = new DALHangHoa();
+            DALKhoHang um = new DALKhoHang();
 
             bool dt = um.insertHangHoa(hanghoa);
 
@@ -38,7 +38,7 @@ namespace BUS
 
         public int updateHangHoa(DTOHangHoa hanghoa)
         {
-            DALHangHoa um = new DALHangHoa();
+            DALKhoHang um = new DALKhoHang();
 
             int dt = um.updateHangHoa(hanghoa);
 
@@ -47,7 +47,7 @@ namespace BUS
 
         public DTOHangHoa getHangHoaDetail(string mahanghoa)
         {
-            DALHangHoa um = new DALHangHoa();
+            DALKhoHang um = new DALKhoHang();
 
             DataTable dt = um.getHangHoaDetail(mahanghoa);
             DTOHangHoa a = new DTOHangHoa();
@@ -60,5 +60,34 @@ namespace BUS
             return a;
         }
 
+        public DataTable getRoleList()
+        {
+            DALBaoMat um = new DALBaoMat();
+
+            DataTable dt = um.getRoleList();
+
+            return dt;
         }
+
+        public bool updateRoleList(DataTable dt)
+        {
+            DALBaoMat um = new DALBaoMat();
+            if (um.updateRoleList(dt))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public DataTable getUserList()
+        {
+            DALBaoMat um = new DALBaoMat();
+
+            DataTable dt = um.getUserList();
+
+            return dt;
+        }
+
+
+    }
 }

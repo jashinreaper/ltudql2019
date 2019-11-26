@@ -8,41 +8,23 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class CommonQuery
+    public class CommonQuery:ConnectionToSql
     {
-        ConnectionToSql conClass = new ConnectionToSql();
         public int ExecNonQuery(string sql)
         {
-            DataTable dt = new DataTable();
             var _cmd = new SqlCommand();
             _cmd.CommandText = sql;
             _cmd.CommandType = CommandType.Text;
-            _cmd.Connection = conClass.connection;
-            conClass.OpenConn();
+            _cmd.Connection = connection;
+            OpenConn();
             var i = _cmd.ExecuteNonQuery();
-            conClass.CloseConn();
+            CloseConn();
             return i;
         }
 
         public int ExecSelectedCount(string sql)
         {
-            DataTable dt = new DataTable();
-            var _cmd = new SqlCommand();
-            _cmd.CommandText = sql;
-            _cmd.CommandType = CommandType.Text;
-            _cmd.Connection = conClass.connection;
-            try
-            {
-                conClass.OpenConn();
-                SqlDataAdapter sda = new SqlDataAdapter(_cmd);
-                sda.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                string mex = ex.Message;
-                _cmd.Dispose();
-                conClass.CloseConn();
-            }
+            DataTable dt = GetData(sql);
             return dt.Rows.Count;
         }
 
@@ -52,10 +34,10 @@ namespace DAL
             var _cmd = new SqlCommand();
             _cmd.CommandText = sql;
             _cmd.CommandType = CommandType.Text;
-            _cmd.Connection = conClass.connection;
+            _cmd.Connection = connection;
             try
             {
-                conClass.OpenConn();
+                OpenConn();
                 SqlDataAdapter sda = new SqlDataAdapter(_cmd);
                 sda.Fill(dt);
             }
@@ -63,31 +45,10 @@ namespace DAL
             {
                 string mex = ex.Message;
                 _cmd.Dispose();
-                conClass.CloseConn();
+                CloseConn();
             }
             return dt;
         }
 
-        public bool SetData(string sql)
-        {
-            var _cmd = new SqlCommand();
-            _cmd.CommandText = sql;
-            _cmd = new SqlCommand();
-            _cmd.CommandType = CommandType.Text;
-            _cmd.Connection = conClass.connection;
-            try
-            {
-                conClass.OpenConn();
-                _cmd.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                string mex = ex.Message;
-                _cmd.Dispose();
-                conClass.CloseConn();
-            }
-            return false;
-        }
     }
 }

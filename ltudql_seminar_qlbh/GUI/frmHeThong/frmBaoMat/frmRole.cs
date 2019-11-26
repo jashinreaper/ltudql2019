@@ -17,7 +17,7 @@ namespace ltudql_seminar_qlbh.MainForm
 
         private void treelistVaitro_Load(object sender, EventArgs e)
         {
-            BUSRole um = new BUSRole();
+            BUSBaoMat um = new BUSBaoMat();
             DataTable dt = um.getRoleList();
             //dt.Columns[0].ColumnName = "ID";
             dt.Columns[1].ColumnName = "roleID";
@@ -158,9 +158,9 @@ namespace ltudql_seminar_qlbh.MainForm
                     Convert.ToBoolean(item.GetValue("Tất cả")), Convert.ToBoolean(item.GetValue("Truy cập")), Convert.ToBoolean(item.GetValue("Thêm")), Convert.ToBoolean(item.GetValue("Sửa")),
                     Convert.ToBoolean(item.GetValue("Xóa")), Convert.ToBoolean(item.GetValue("In")), Convert.ToBoolean(item.GetValue("Nhập")), Convert.ToBoolean(item.GetValue("Xuất")), Convert.ToBoolean(item.GetValue("isActived")));
             }
-            BUSRole busRole = new BUSRole();
+            BUSBaoMat bus = new BUSBaoMat();
             //MessageBox.Show(dt.Rows.Count.ToString());
-            if (busRole.updateRoleList(dt))
+            if (bus.updateRoleList(dt))
             {
                 MessageBox.Show("Cập nhật thành công");
             }

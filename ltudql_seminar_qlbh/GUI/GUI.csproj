@@ -135,12 +135,6 @@
     <Compile Include="frmHeThong\frmBaoMat\frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHeThong\frmBaoMat\frmUser_Update.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHeThong\frmBaoMat\frmUser_Update.Designer.cs">
-      <DependentUpon>frmUser_Update.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmHeThong\frmBaoMat\frmUser_Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,9 +209,6 @@
     <EmbeddedResource Include="frmHeThong\frmBaoMat\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHeThong\frmBaoMat\frmUser_Update.resx">
-      <DependentUpon>frmUser_Update.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmHeThong\frmBaoMat\frmUser_Add.resx">
       <DependentUpon>frmUser_Add.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,7 +270,9 @@
     <Content Include="QuanLyBanHang.sql" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="frmChucNang\" />
     <Folder Include="frmHeThong\frmDuLieu\" />
+    <Folder Include="frmTroGiup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

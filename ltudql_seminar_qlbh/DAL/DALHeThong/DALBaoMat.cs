@@ -7,12 +7,25 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DALRole
+    public class DALBaoMat
     {
         static CommonQuery cq = new CommonQuery();
         public DataTable getRoleList()
         {
             string query = string.Format($"select * from Roles");
+            DataTable dt = cq.GetData(query);
+            return dt;
+        }
+        public DataTable getUserList()
+        {
+            string query = string.Format($"select u.id,u.userid,u.username,u.userfullname,r.rolename,r.roledes from Users u join Roles r on u.roleid = r.roleid");
+            DataTable dt = cq.GetData(query);
+            return dt;
+        }
+
+        public DataTable getNhatKyHeThong()
+        {
+            string query = string.Format($"select * from NhatKyHeThong");
             DataTable dt = cq.GetData(query);
             return dt;
         }
@@ -42,6 +55,9 @@ namespace DAL
             }
             return r;
         }
+
+
+
 
     }
 }

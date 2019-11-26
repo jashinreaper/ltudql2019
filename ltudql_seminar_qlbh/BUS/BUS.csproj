@@ -41,10 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUSHangHoa.cs" />
+    <Compile Include="BUSHeThong\BUSBaoMat.cs" />
+    <Compile Include="BUSHeThong\BUSHeTHong.cs" />
     <Compile Include="BUSLogin.cs" />
-    <Compile Include="BUSRole.cs" />
-    <Compile Include="BUSUserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +55,11 @@
       <Project>{09d127be-537b-43e2-a03c-9716a1442555}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BUSChucNang\" />
+    <Folder Include="BUSDanhMuc\" />
+    <Folder Include="BUSTroGiup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

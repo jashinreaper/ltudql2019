@@ -8,12 +8,48 @@ using System.Threading.Tasks;
 using DTO;
 namespace DAL
 {
-    public class DALHangHoa
+    public class DALKhoHang
     {
+        public DataTable getKho()
+        {
+            CommonQuery cq = new CommonQuery();
+            string query = string.Format($"select * from Kho");
+            DataTable dt = cq.GetData(query);
+            return dt;
+        }
+        public DataTable getDonViTinh()
+        {
+            CommonQuery cq = new CommonQuery();
+            string query = string.Format($"select * from DonViTinh");
+            DataTable dt = cq.GetData(query);
+            return dt;
+        }
+        public DataTable getNhomHang()
+        {
+            CommonQuery cq = new CommonQuery();
+            string query = string.Format($"select * from NhomHang");
+            DataTable dt = cq.GetData(query);
+            return dt;
+        }
+
         public DataTable getHangHoa()
         {
             CommonQuery cq = new CommonQuery();
             string query = string.Format($"select * from SANPHAM");
+            DataTable dt = cq.GetData(query);
+            return dt;
+        }
+        public DataTable getHangHoaDetail(string mahanghoa)
+        {
+            CommonQuery cq = new CommonQuery();
+            string query = string.Format($"select * from SANPHAM where MaSP = '{mahanghoa}'");
+            DataTable dt = cq.GetData(query);
+            return dt;
+        }
+        public DataTable getTiGia()
+        {
+            CommonQuery cq = new CommonQuery();
+            string query = string.Format($"select * from Kho");
             DataTable dt = cq.GetData(query);
             return dt;
         }
@@ -45,12 +81,10 @@ namespace DAL
             return dt;
         }
 
-        public DataTable getHangHoaDetail(string mahanghoa)
-        {
-            CommonQuery cq = new CommonQuery();
-            string query = string.Format($"select * from SANPHAM where MaSP = '{mahanghoa}'");
-            DataTable dt = cq.GetData(query);
-            return dt;
-        }
+
+
+
+
+
     }
 }

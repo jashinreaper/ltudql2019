@@ -42,10 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectToSql.cs" />
-    <Compile Include="DALHangHoa.cs" />
+    <Compile Include="DALDanhMuc\DALDoiTac.cs" />
+    <Compile Include="DALDanhMuc\DALKhoHang.cs" />
+    <Compile Include="DALHeThong\DALHeThong.cs" />
     <Compile Include="DALLogin.cs" />
-    <Compile Include="DALRole.cs" />
-    <Compile Include="DALUserManager.cs" />
+    <Compile Include="DALHeThong\DALBaoMat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommonQuery.cs" />
   </ItemGroup>
@@ -54,6 +55,10 @@
       <Project>{09d127be-537b-43e2-a03c-9716a1442555}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DALChucNang\" />
+    <Folder Include="DALTroGiup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,7 +22,7 @@ namespace ltudql_seminar_qlbh.MainForm
 
         private void dgvQuanlynguoidung_Load(object sender, EventArgs e)
         {
-            BUSUserManager um = new BUSUserManager();
+            BUSBaoMat um = new BUSBaoMat();
             DataTable dt = um.getUserList();
             dt.Columns[0].ColumnName = "STT";
             dt.Columns[1].ColumnName = "ID";

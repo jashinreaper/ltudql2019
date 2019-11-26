@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class ConnectionToSql
+    public class ConnectionToSql
     {
         private SqlConnection Conn;
         private SqlCommand _cmd;

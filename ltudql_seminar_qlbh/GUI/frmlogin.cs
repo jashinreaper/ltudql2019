@@ -23,10 +23,10 @@ namespace ltudql_seminar_qlbh
             var bus = new BUSLogin();
             if(bus.isCorrect(tbUsername.Text,tbPassword.Text) ==true)
             {
-                DTOcurrentUser.proleid = bus.getRole(tbUsername.Text);
-                DTOcurrentUser.prolename = bus.getRoleName(tbUsername.Text);
+                DTOcurrentUser.roleid = bus.getRole(tbUsername.Text);
+                DTOcurrentUser.rolename = bus.getRoleName(tbUsername.Text);
                 RibbonFormMain rfm = new RibbonFormMain();
-                rfm.Text = DTOcurrentUser.prolename + " - Phần mềm quản lý bán hàng";
+                rfm.Text = DTOcurrentUser.rolename + " - Phần mềm quản lý bán hàng";
                 this.Visible = false;
                 rfm.ShowDialog();
                 this.Close();

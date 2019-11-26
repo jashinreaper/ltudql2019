@@ -42,9 +42,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOcurrentUser.cs" />
-    <Compile Include="DTOHangHoa.cs" />
-    <Compile Include="DTOUser.cs" />
+    <Compile Include="DTODanhMuc\DTOBoPhan.cs" />
+    <Compile Include="DTODanhMuc\DTODonViTinh.cs" />
+    <Compile Include="DTODanhMuc\DTOHangHoa.cs" />
+    <Compile Include="DTODanhMuc\DTOKhachHang.cs" />
+    <Compile Include="DTODanhMuc\DTOKho.cs" />
+    <Compile Include="DTODanhMuc\DTOKhuVuc.cs" />
+    <Compile Include="DTODanhMuc\DTONhanVien.cs" />
+    <Compile Include="DTODanhMuc\DTONhaPhanPhoi.cs" />
+    <Compile Include="DTODanhMuc\DTONhomHang.cs" />
+    <Compile Include="DTODanhMuc\DTOTiGia.cs" />
+    <Compile Include="DTOHeThong\DTOThongTin.cs" />
+    <Compile Include="DTOHeThong\DTOUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTOChucNang\" />
+    <Folder Include="DTOTroGiup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
