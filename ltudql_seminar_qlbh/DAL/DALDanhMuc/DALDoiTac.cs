@@ -7,7 +7,7 @@ using System.Data;
 using DTO;
 namespace DAL
 {
-    class DALDoiTac:CommonQuery
+    public class DALDoiTac:CommonQuery
     {
         public DataTable getKhuVuc()
         {
@@ -27,18 +27,24 @@ namespace DAL
             DataTable dt = GetData(query);
             return dt;
         }
-
+        public DataTable getKhachHangDetail(string mahanghoa)
+        {
+            CommonQuery cq = new CommonQuery();
+            string query = string.Format($"select * from KHACHHANG where MAKH = '{mahanghoa}'");
+            DataTable dt = cq.GetData(query);
+            return dt;
+        }
         public int deleteKhuVuc(string id)
         {
             CommonQuery cq = new CommonQuery();
-            string query = string.Format($"delete from SANPHAM where MaSP = '{id}'");
+            string query = string.Format($"delete from KHUVUC where MaSP = '{id}'");
             int dt = cq.ExecNonQuery(query);
             return dt;
         }
         public int deleteKhachHang(string id)
         {
             CommonQuery cq = new CommonQuery();
-            string query = string.Format($"delete from SANPHAM where MaSP = '{id}'");
+            string query = string.Format($"delete from KHACHHANG where MAKH = '{id}'");
             int dt = cq.ExecNonQuery(query);
             return dt;
         }
@@ -50,25 +56,26 @@ namespace DAL
             return dt;
         }
 
-        public bool insertHangHoa(DTOHangHoa hanghoa)
+        public bool insertKhachHang(DTOKhachHang hanghoa)
         {
-            CommonQuery cq = new CommonQuery();
-            string query = string.Format($"select * from SANPHAM where MaSP = '{hanghoa.MASP}'");
-            if (cq.ExecSelectedCount(query) > 0)
-                return false;
+            //CommonQuery cq = new CommonQuery();
+            //string query = string.Format($"select * from SANPHAM where MaSP = '{hanghoa.MASP}'");
+            //if (cq.ExecSelectedCount(query) > 0)
+            //    return false;
 
-            query = string.Format($"insert into SANPHAM values('{hanghoa.MASP}','{hanghoa.TENSP}'," +
-                $"'{hanghoa.DVT}','{hanghoa.NUOCSX}','{hanghoa.GIA}')");
-            int dt = cq.ExecNonQuery(query);
+            //query = string.Format($"insert into SANPHAM values('{hanghoa.MASP}','{hanghoa.TENSP}'," +
+            //    $"'{hanghoa.DVT}','{hanghoa.NUOCSX}','{hanghoa.GIA}')");
+            //int dt = cq.ExecNonQuery(query);
             return true;
         }
 
-        public int updateHangHoa(DTOHangHoa hanghoa)
+        public int updateKhachHang(DTOKhachHang hanghoa)
         {
-            CommonQuery cq = new CommonQuery();
-            string query = string.Format($"update SANPHAM set TENSP='{hanghoa.TENSP}',DVT='{hanghoa.DVT}',NUOCSX='{hanghoa.NUOCSX}',GIA='{hanghoa.GIA}' where MaSP = '{hanghoa.MASP}'");
-            int dt = cq.ExecNonQuery(query);
-            return dt;
+            //CommonQuery cq = new CommonQuery();
+            //string query = string.Format($"update SANPHAM set TENSP='{hanghoa.TENSP}',DVT='{hanghoa.DVT}',NUOCSX='{hanghoa.NUOCSX}',GIA='{hanghoa.GIA}' where MaSP = '{hanghoa.MASP}'");
+            //int dt = cq.ExecNonQuery(query);
+            //return dt;
+            return 1;
         }
 
     }

@@ -118,5 +118,11 @@ namespace ltudql_seminar_qlbh
             frmDoiMatKhau frm = new frmDoiMatKhau();
             frm.Show();
         }
+
+        private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmKhachHang frm = new frmKhachHang();
+            frm.Show();
+        }
     }
 }

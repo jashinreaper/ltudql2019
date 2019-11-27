@@ -33,7 +33,7 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
         private void simpleButton2_Click(object sender, EventArgs e)
         {
 
-            BUSBaoMat b = new BUSBaoMat();
+            BUSKhoHang b = new BUSKhoHang();
             DTOHangHoa d = new DTOHangHoa();
             d.MASP = textEdit2.Text;
             d.TENSP = textEdit4.Text;
@@ -58,7 +58,7 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
         {
             if (!isAddForm)
             {
-                BUSBaoMat b = new BUSBaoMat();
+                BUSKhoHang b = new BUSKhoHang();
                 DTOHangHoa dtoHangHoa = b.getHangHoaDetail(gotID);
                textEdit2.Text = dtoHangHoa.MASP;
                  textEdit4.Text = dtoHangHoa.TENSP; 

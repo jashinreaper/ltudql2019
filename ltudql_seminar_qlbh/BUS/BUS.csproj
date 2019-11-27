@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUSDanhMuc\BUSDoiTac.cs" />
+    <Compile Include="BUSDanhMuc\BUSKhoHang.cs" />
     <Compile Include="BUSHeThong\BUSBaoMat.cs" />
     <Compile Include="BUSHeThong\BUSHeTHong.cs" />
     <Compile Include="BUSLogin.cs" />
@@ -58,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BUSChucNang\" />
-    <Folder Include="BUSDanhMuc\" />
     <Folder Include="BUSTroGiup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

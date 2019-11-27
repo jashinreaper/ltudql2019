@@ -27,7 +27,7 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
 
         public void getdata()
         {
-            BUSBaoMat um = new BUSBaoMat();
+            BUSKhoHang um = new BUSKhoHang();
             DataTable dt = um.getHangHoa();
             dt.Columns[0].ColumnName = "ID";
             dt.Columns[1].ColumnName = "Mã hàng hóa";
@@ -51,10 +51,10 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            BUSBaoMat um = new BUSBaoMat();
+            BUSKhoHang um = new BUSKhoHang();
 
             string a = gridView1.GetFocusedRowCellValue("Mã hàng hóa").ToString();
-            MessageBox.Show(a);
+            //MessageBox.Show(a);
             um.removeHangHoa(a);
             getdata();
             gridView1.RefreshData();

@@ -359,6 +359,7 @@
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl2.Location = new System.Drawing.Point(2, 23);
             this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1270, 153, 650, 400);
             this.layoutControl2.Root = this.layoutControlGroup1;
             this.layoutControl2.Size = new System.Drawing.Size(670, 296);
             this.layoutControl2.TabIndex = 0;
@@ -476,7 +477,7 @@
             this.layoutControlItem10,
             this.layoutControlItem11,
             this.layoutControlItem12});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(670, 296);
             this.layoutControlGroup1.TextVisible = false;
             // 

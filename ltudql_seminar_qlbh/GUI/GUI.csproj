@@ -188,6 +188,9 @@
     <EmbeddedResource Include="frmDanhMuc\frmDoiTac\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhMuc\frmDoiTac\frmKhachHang_Add.resx">
+      <DependentUpon>frmKhachHang_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDanhMuc\frmDoiTac\frmNhaPhanPhoi.resx">
       <DependentUpon>frmNhaPhanPhoi.cs</DependentUpon>
     </EmbeddedResource>

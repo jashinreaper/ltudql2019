@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class DTOKhachHang
+    public class DTOKhachHang
     {
+        public string MAKH { get; set; }
+        public string HOTEN { get; set; }
+        public string DCHI { get; set; }
+        public string SODT { get; set; }
+        public string NGSINH { get; set; }
+        public string id { get; set; }
     }
 }
