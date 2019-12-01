@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmChucNang\frmQuanLyBanHang\frmMuaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChucNang\frmQuanLyBanHang\frmMuaHang.Designer.cs">
+      <DependentUpon>frmMuaHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDanhMuc\frmDoiTac\frmNhaPhanPhoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     <Compile Include="RibbonFormMain.Designer.cs">
       <DependentUpon>RibbonFormMain.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmChucNang\frmQuanLyBanHang\frmMuaHang.resx">
+      <DependentUpon>frmMuaHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDanhMuc\frmDoiTac\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDanhMuc\frmDoiTac\frmNhaPhanPhoi.resx">
       <DependentUpon>frmNhaPhanPhoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhMuc\frmDoiTac\frmNhaPhanPhoi_Add.resx">
+      <DependentUpon>frmNhaPhanPhoi_Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDanhMuc\frmKhoHang\frmDonViTinh.resx">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
@@ -273,7 +285,9 @@
     <Content Include="QuanLyBanHang.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="frmChucNang\" />
+    <Folder Include="frmChucNang\frmBaoCao\" />
+    <Folder Include="frmChucNang\frmCongNo\" />
+    <Folder Include="frmChucNang\frmTienIch\" />
     <Folder Include="frmHeThong\frmDuLieu\" />
     <Folder Include="frmTroGiup\" />
   </ItemGroup>
