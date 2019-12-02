@@ -66,6 +66,10 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
                 textEdit1.Text = dtoHangHoa.NUOCSX; 
                  comboBoxEdit10.Text = dtoHangHoa.GIA; 
             }
+            else
+            {
+                textEdit2.ReadOnly = false;
+            }
         }
 
         private void imageEdit1_DoubleClick(object sender, EventArgs e)
