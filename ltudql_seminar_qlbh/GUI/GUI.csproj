@@ -69,18 +69,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmDanhMuc\frmDoiTac\frmKhuVuc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDanhMuc\frmDoiTac\frmKhuVuc.Designer.cs">
-      <DependentUpon>frmKhuVuc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDanhMuc\frmDoiTac\frmKhuVuc_Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDanhMuc\frmDoiTac\frmKhuVuc_Add.Designer.cs">
-      <DependentUpon>frmKhuVuc_Add.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDanhMuc\frmDoiTac\frmNhaPhanPhoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,35 +135,11 @@
     <Compile Include="frmHeThong\frmBaoMat\frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHeThong\frmBaoMat\frmNhatKyHeThong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHeThong\frmBaoMat\frmNhatKyHeThong.Designer.cs">
-      <DependentUpon>frmNhatKyHeThong.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmHeThong\frmBaoMat\frmUser_Add.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHeThong\frmBaoMat\frmUser_Add.Designer.cs">
       <DependentUpon>frmUser_Add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHeThong\frmDuLieu\frmKetChuyen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHeThong\frmDuLieu\frmKetChuyen.Designer.cs">
-      <DependentUpon>frmKetChuyen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHeThong\frmDuLieu\frmPhucHoi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHeThong\frmDuLieu\frmPhucHoi.Designer.cs">
-      <DependentUpon>frmPhucHoi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHeThong\frmDuLieu\frmSaoLuu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHeThong\frmDuLieu\frmSaoLuu.Designer.cs">
-      <DependentUpon>frmSaoLuu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHeThong\frmHeThong\frmThongTin.cs">
       <SubType>Form</SubType>
@@ -227,12 +191,6 @@
     <EmbeddedResource Include="frmDanhMuc\frmDoiTac\frmKhachHang_Add.resx">
       <DependentUpon>frmKhachHang_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDanhMuc\frmDoiTac\frmKhuVuc.resx">
-      <DependentUpon>frmKhuVuc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDanhMuc\frmDoiTac\frmKhuVuc_Add.resx">
-      <DependentUpon>frmKhuVuc_Add.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDanhMuc\frmDoiTac\frmNhaPhanPhoi.resx">
       <DependentUpon>frmNhaPhanPhoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,14 +212,8 @@
     <EmbeddedResource Include="frmHeThong\frmBaoMat\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHeThong\frmBaoMat\frmNhatKyHeThong.resx">
-      <DependentUpon>frmNhatKyHeThong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmHeThong\frmBaoMat\frmUser_Add.resx">
       <DependentUpon>frmUser_Add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHeThong\frmDuLieu\frmSaoLuu.resx">
-      <DependentUpon>frmSaoLuu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHeThong\frmHeThong\frmThongTin.resx">
       <DependentUpon>frmThongTin.cs</DependentUpon>
@@ -322,6 +274,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="frmChucNang\" />
+    <Folder Include="frmHeThong\frmDuLieu\" />
     <Folder Include="frmTroGiup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
