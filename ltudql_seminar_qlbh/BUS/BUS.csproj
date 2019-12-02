@@ -44,6 +44,7 @@
     <Compile Include="BUSDanhMuc\BUSDoiTac.cs" />
     <Compile Include="BUSDanhMuc\BUSKhoHang.cs" />
     <Compile Include="BUSHeThong\BUSBaoMat.cs" />
+    <Compile Include="BUSHeThong\BUSDuLieu.cs" />
     <Compile Include="BUSHeThong\BUSHeTHong.cs" />
     <Compile Include="BUSLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

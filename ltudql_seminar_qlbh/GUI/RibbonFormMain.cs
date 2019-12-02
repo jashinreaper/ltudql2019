@@ -12,6 +12,7 @@ using ltudql_seminar_qlbh.MainForm;
 using ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac;
 using ltudql_seminar_qlbh.frmHeThong.frmHeThong;
 using ltudql_seminar_qlbh.frmHeThong.frmBaoMat;
+using ltudql_seminar_qlbh.frmHeThong.frmDuLieu;
 
 namespace ltudql_seminar_qlbh
 {
@@ -122,6 +123,12 @@ namespace ltudql_seminar_qlbh
         private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmKhachHang frm = new frmKhachHang();
+            frm.Show();
+        }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmSaoLuu frm = new frmSaoLuu();
             frm.Show();
         }
     }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BUS;
 using DTO;
+using ltudql_seminar_qlbh.frmBaoMat;
 
 namespace ltudql_seminar_qlbh.MainForm
 {
@@ -24,18 +25,38 @@ namespace ltudql_seminar_qlbh.MainForm
         {
             BUSBaoMat um = new BUSBaoMat();
             DataTable dt = um.getUserList();
-            dt.Columns[0].ColumnName = "STT";
-            dt.Columns[1].ColumnName = "ID";
-            dt.Columns[2].ColumnName = "Tên tài khoản";
-            dt.Columns[3].ColumnName = "Tên người dùng";
-            dt.Columns[4].ColumnName = "Tên vai trò";
-            dt.Columns[5].ColumnName = "Diễn giải";
-            gridColumn5.FieldName = "STT";
-            gridColumn1.FieldName = "ID";
-            gridColumn2.FieldName = "Tên người dùng";
-            gridColumn3.FieldName = "Tên vai trò";
-            gridColumn4.FieldName = "Diễn giải";
-            gridColumn6.FieldName = "Tên tài khoản";
+            gridColumn5.FieldName = "id";
+            gridColumn1.FieldName = "userid";
+            gridColumn2.FieldName = "userfullname";
+            gridColumn3.FieldName = "rolename";
+            gridColumn4.FieldName = "roledes";
+            gridColumn6.FieldName = "username";
+            gridColumn7.FieldName = "isactive";
+            dgvQuanlynguoidung.DataSource = dt;
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmUser_Add add = new frmUser_Add(true,"");
+            add.Show();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmUser_Add add = new frmUser_Add(false, gridView1.GetFocusedRowCellValue("userid").ToString());
+            add.Show();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            BUSBaoMat um = new BUSBaoMat();
+
+            string a = gridView1.GetFocusedRowCellValue("userid").ToString();
+            um.removeHangHoa(a);
+
+
+            BUSBaoMat um2 = new BUSBaoMat();
+            DataTable dt = um2.getUserList();
             dgvQuanlynguoidung.DataSource = dt;
         }
     }
