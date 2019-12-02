@@ -10,7 +10,33 @@ use QuanLyBanHang
 go
 ---------------------------------------GO-----------------------
 --TAB HETHONG---------------------
---GROUP HETHONG
+create table Users
+(
+id int identity(1,1),
+userid varchar(10) primary key,
+username varchar(30),
+userpassword varchar(30),
+userfullname nvarchar(50),
+roleid varchar(10)
+)
+
+create table Roles
+(
+id int identity(1,1),
+roleid varchar(10) primary key,
+rolename nvarchar(30),
+roledes nvarchar(100),
+rfull bit,
+raccess bit,
+radd bit,
+redit bit,
+rdelete bit,
+rprint bit,
+rwrite bit,
+rread bit,
+isactive bit,
+)
+
 create table THONGTIN
 (
 tendonvi nvarchar(50),
@@ -31,46 +57,10 @@ malinhvuc varchar(10),
 tenlinhvuc nvarchar(30)
 )
 
---GROUP BAOMAT
-create table Users
-(
-id int identity(1,1),
-userid varchar(10) primary key,
-username varchar(30),
-userpassword varchar(30),
-userfullname nvarchar(50),
-roleid varchar(10),
-isactive bit
-)
-
-create table Roles
-(
-id int identity(1,1),
-roleid varchar(10) primary key,
-rolename nvarchar(30),
-roledes nvarchar(100),
-rfull bit,
-raccess bit,
-radd bit,
-redit bit,
-rdelete bit,
-rprint bit,
-rwrite bit,
-rread bit,
-isactive bit,
-)
-
-Create table NHATKIHETHONG(
-	id int identity(1,1),
-	NguoiDung nvarchar(20),
-	MayTinh nvarchar(20),
-	ThoiGian datetime,
-	ChucNang nvarchar(30),
-	HanhDong nvarchar(30),
-	DoiTuong nvarchar(30)
-)
-
---TAB HETHONG DATA
+alter table Users
+add
+foreign key (roleid)
+references Roles(roleid)
 
 
 insert into Roles values('H0','Administrator','abcxyt',1,1,1,1,1,1,1,1,1)
@@ -78,8 +68,8 @@ insert into Roles values('H1','Staff','abcczxca',0,0,0,1,0,1,0,1,1)
 insert into Roles values('B1','Staff2','abcczxca',0,0,0,1,0,1,0,1,0)
 insert into Roles values('B2','Staff3','abcczxca',0,0,0,1,0,1,0,1,1)
 
-insert into Users values('001','pvqui','123',N'Võ Cao Tuấn','H1',1)
-insert into Users values('002','admin','1',N'Trương Bá Hổ','H1',1)
+insert into Users values('001','pvqui','123',N'Võ Cao Tuấn','H1')
+insert into Users values('002','admin','1',N'Trương Bá Hổ','H1')
 
 insert into LINHVUC values('A001',N'Kinh Doanh')
 insert into LINHVUC values('A002',N'Thương mại')
@@ -88,311 +78,194 @@ insert into LINHVUC values('A003',N'Bất động sản')
 insert into THONGTIN values('A003','A003','A003','A003','A003','A003','A003','A003','A003')
 
 select * from Users
-select * from Roles where rolename = 'Administrator'
+select * from Roles
 
 --TAB DANHMUC----------------------
 
---GROUP DOI TAC
--- KHU VUC
-Create table KHUVUC(
-	id int identity(1,1),
-	MaKhuVuc nvarchar(20) not null,
-	TenKhuVuc nvarchar(20),
-	GhiChu nvarchar(50),
-	ConQuanLy bit
-
-	primary key (MaKhuVuc)
-)
--- KHACH HANG
+-- KHACHANG
 CREATE TABLE KHACHHANG(
 	id int identity(1,1),
-	MAKH	char(10) not null,
-	MaKhuVuc nvarchar(30),	
-	HOTEN	nvarchar(40),
-	DiaChi	nvarchar(50),
-	MaSoThue nvarchar(20),
-	Fax nvarchar(20),
-	SODT	nvarchar(20),
-	Mobile nvarchar(20),
-	Email nvarchar(50),
-	Website nvarchar(50),
-	TaiKhoan nvarchar(50),
-	NganHang nvarchar(50),
-	GioiHanNo money,
-	NoHienTai money,
-	ChietKhau float,
-	NickYahoo nvarchar(50),
-	NguoiLienHe nvarchar(50),
-	NickSkype nvarchar(50),
-	ConQuanLy bit,
-	DaiLy bit,
-	KhachLe bit
-	primary key (MAKH)
+	MAKH	char(4) not null,	
+	HOTEN	varchar(40),
+	DCHI	varchar(50),
+	SODT	varchar(20),
+	NGSINH	smalldatetime,
+	NGDK	smalldatetime,
+	DOANHSO	money,
+	constraint pk_kh primary key(MAKH)
 )
 ---------------------------------------------
--- NHA PHAN PHOI
-CREATE TABLE NHAPHANPHOI(
-	id int identity(1,1),
-	MaNPP	char(10) not null,
-		MaKhuVuc nvarchar(30),	
-	TenNPP	nvarchar(40),
-	DiaChi	nvarchar(50),
-	MaSoThue nvarchar(20),
-	Fax nvarchar(20),
-	SODT	nvarchar(20),
-	Mobile nvarchar(20),
-	Email nvarchar(50),
-	Website nvarchar(50),
-	TaiKhoan nvarchar(50),
-	NganHang nvarchar(50),
-	GioiHanNo money,
-	NoHienTai money,
-	ChietKhau float,
-	NguoiLienHe nvarchar(50),
-	ChucVu nvarchar(50),
-	ConQuanLy bit
-
-	primary key (MaNPP)
-)
-
---GROUP KHO HANG-------------------------------------------
--- KHO
-CREATE TABLE KHO(
-id int identity(1,1),
-	MaKho	char(10) not null,
-	TenKho	nvarchar(40),
-	DiaChi	nvarchar(50),
-	Fax nvarchar(20),
-	SODT	nvarchar(20),
-	Mobile nvarchar(20),
-	Email nvarchar(50),
-	NguoiQuanLy nvarchar(50),
-	DienGiai nvarchar(50),
-	ConQuanLy bit
-
-	primary key (MaKho)
-)
--- BANG DON VI
-CREATE TABLE BANGDONVI(
-id int identity(1,1),
-	MaDV	char(10) not null,
-	TenDV	nvarchar(40),
-	GhiChu	nvarchar(50),
-	ConQuanLy bit
-
-	primary key (MaDV)
-)
--- BANG NHOM HANG
-CREATE TABLE BANGNHOMHANG(
-id int identity(1,1),
-	MaNH	char(10) not null,
-	TenNH	nvarchar(40),
-	GhiChu	nvarchar(50),
-	ConQuanLy bit
-
-	primary key (MaNH)
-)
-
--- HANG HOA
-CREATE TABLE HANGHOA(
-id int identity(1,1),
-	VatTu bit,
-	DichVu bit,
-		MaKhoHang nvarchar(30), 
-	PhanLoai nvarchar(30),
-	MaHH char(10) not null,
-	TENHH	varchar(40),
-	MaVachNSX nvarchar(20),
-		MaDonVi nvarchar(20),
-	XuatXu nvarchar(10),
-	Thue	float,
-	TonKhoToiThieu	int,
-	TonKhoHienTai int,
-		MaNhaCungCap nvarchar(30),
-	GiaMua money,
-	GiaSi money,
-	GiaLe money
-
-	primary key (MaHH)
-)
----GROUP TO CHUC------------------------------------------
--- BO PHAN
-CREATE TABLE BOPHAN(
-id int identity(1,1),
-	MaBP	char(10) not null,
-	TenBP	nvarchar(40),
-	GhiChu	nvarchar(50),
-	ConQuanLy bit
-
-	primary key (MaBP)
-)
--- NHAN VIEN
+-- NHANVIEN
 CREATE TABLE NHANVIEN(
-id int identity(1,1),
-	MANV	char(10) not null,
-	DocThan bit,
-	ConQuanLy bit,	
-	HOTEN	nvarchar(40),
-	ChucVu nvarchar(40),
-	DiaChi	nvarchar(100),
-	SODT	nvarchar(20),
-	Mobile nvarchar(20),
-	Email nvarchar(50),
-	DienGiai nvarchar(40),
-	BoPhan nvarchar(40),
-	QuanLy nvarchar(40)	
-
-	primary key(MANV)
+	id int identity(1,1),
+	MANV	char(4) not null,	
+	HOTEN	varchar(40),
+	SODT	varchar(20),
+	NGVL	smalldatetime	
+	constraint pk_nv primary key(MANV)
 )
-
-
---TAB CHUCNANG
---GROUP QUAN LI BAN HANG
+---------------------------------------------
+-- SANPHAM
+CREATE TABLE SANPHAM(
+	id int identity(1,1),
+	MASP	char(4) not null,
+	TENSP	varchar(40),
+	DVT	varchar(20),
+	NUOCSX	varchar(40),
+	GIA	money,
+	constraint pk_sp primary key(MASP)	
+)
+---------------------------------------------
 -- HOADON
 CREATE TABLE HOADON(
-id int identity(1,1),
-	MaHD nvarchar(20) not null ,
-	MaKH nvarchar(20),
-	Gia float,
-	Thue float,
-	GiamGia float,
-	NgayXuatHD datetime,
-	Mieuta nvarchar(255),
-
-	primary key(MaHD),
+	id int identity(1,1),
+	SOHD	int not null,
+	NGHD 	smalldatetime,
+	MAKH 	char(4),
+	MANV 	char(4),
+	TRIGIA	money,
+	constraint pk_hd primary key(SOHD)
 )
 ---------------------------------------------
 -- CTHD
    CREATE TABLE CTHD(
    id int identity(1,1),
-	MaHD	nvarchar(20),
-		MASP	char(20),
-	SL	int
-
-	primary key(MaHD,MaSP)
+	SOHD	int,
+	MASP	char(4),
+	SL	int,
+	constraint pk_cthd primary key(SOHD,MASP)
 )
 
---DATA-------------
+-- Khoa ngoai cho bang HOADON
+ALTER TABLE HOADON ADD CONSTRAINT fk01_HD FOREIGN KEY(MAKH) REFERENCES KHACHHANG(MAKH)
+ALTER TABLE HOADON ADD CONSTRAINT fk02_HD FOREIGN KEY(MANV) REFERENCES NHANVIEN(MANV)
+-- Khoa ngoai cho bang CTHD
+ALTER TABLE CTHD ADD CONSTRAINT fk01_CTHD FOREIGN KEY(SOHD) REFERENCES HOADON(SOHD)
+ALTER TABLE CTHD ADD CONSTRAINT fk02_CTHD FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP)
+-----------------------------------------------------
 -----------------------------------------------------
 set dateformat dmy
 -------------------------------
--- KHU VUC
-insert into KhuVuc values('KVA',N'Khu A',N'Quản lý thiết bị điên tử',1),
-							('KVB',N'Khu B',N'Quản lý đồ gia dụng',1),
-							('KVC',N'Khu C',N'Quản lý đồ thủ công',1),
-							('KVD',N'Khu D',N'Quản lý thiết bị di động',1),
-							('KVE',N'Khu E',N'Quản lý mỹ phẩm',1),
-							('KVF',N'Khu F',N'Quản lý Thực Phẩm',1)
-
--- Khách Hàng
-insert into KHACHHANG values('KH0001','KVA',N'Nguyễn Thị Trúc',N'175/6 P.15 Điện Biên Phủ Q.Bình Thạnh Tp.HCM','0215512','023151512','05121512851','','NTT@gmail.com','www.NTT.com','215121215','VCB',1000000,Null,10,'NTT',N'Nguyễn Thị Trúc','NTT',1,1,0),
-							('KH0002','KVB',N'Trần Văn Đại',N'171 P.3 Nguyễn Văn Cừ Q.5 Tp.HCM','0845222','0234874212','03215122451','','TVD@gmail.com','www.TVD.com','321512215','ARB',3000000,'',5,'TVD',N'Trần Văn Đại','TVD',1,1,0),
-							('KH0003','KVC',N'Trần Thu Thủy',N'51 P.3 Nguyễn Thị Minh Khai Q.3 Tp.HCM','0321221','05421532122','03265123151','','TTT@gmail.com','www.TTT.com','5421512523','ARB',2000000,Null,5,'TTT',N'Trần Thu Thủy','TTT',1,1,0)
-
-
---Nhà Phân Phối
-insert into NHAPHANPHOI values('NPP001','KVB',N'Benny',N'151 P.2 Điện Biên Phủ Q.Bình Thạnh Tp.HCM','021651321','0653165161','0216546221','',N'Benny@gmail.com',N'benny.com.vn','066548521','',3000000,Null,5,N'Trần Hoàng Long','',1),
-								('NPP002','KVE',N'Thương hiệu Lancome',N'38 P.12 Hai Bà Trưng Q.Bình Thạnh Tp.HCM','0545212212','08424154542','0215612148','',N'Lancome@gmail.com',N'Lancome.com.vn','051231581','',10000000,Null,15,N'Nguyễn Thu Hồng','',1),
-								('NPP003','KVA',N'LG Electronics',N'185 P.12 Cách Mạng Tháng 8 Q.5 Tp.HCM','021512321','0321516212','045842123','',N'LG@gmail.com',N'Lg.com','065416541','',200000000,Null,20,N'Phạm Quốc Đạt','',1),
-								('NPP004','KVA',N'Samsung',N'154 P.12 Cách Mạng Tháng 8 Q.5 Tp.HCM','026216516','031561656212','055842123','',N'samsung@gmail.com',N'samsung.com','03541326541','',300000000,Null,15,N'Võ Hoài Trâm','',1)
-
---Kho
-
-insert into KHO values('K001',N'Kho Điện Tử',N'59 P.2 Cách Mạng Tháng 8 Q.5 Tp.HCM','065165132','021651651','',N'pth@gmail.com',N'Phạm Thế Vinh',N'Quản lý',1),
-						('K002',N'Kho Đồ Gia Dụng',N'512 P.2 Cách Mạng Tháng 8 Q.5 Tp.HCM','06212165','021651264','',N'nth@gmail.com',N'Nguyễn Thị Hồng',N'Quản lý',1),
-						('K003',N'Kho Đồ Thủ Công',N'485 P.4 Cách Mạng Tháng 8 Q.3 Tp.HCM','062165416','032151212','',N'dtr@gmail.com',N'Đặng Thị Trân',N'Quản lý',1),
-						('K004',N'Kho Thiết Bị Di Động',N'201 P.8 Cách Mạng Tháng 8 Q.5 Tp.HCM','031651651','0354512316','',N'pvt@gmail.com',N'Phan Văn Tài',N'Quản lý',1),
-						('K005',N'Kho Mỹ Phẩm',N'121 P.11 Cách Mạng Tháng 8 Q.5 Tp.HCM','021561655','065121852','',N'nvd@gmail.com',N'Nguyễn Văn Đức',N'Quản lý',1),
-						('K006',N'Kho Thực Phẩm',N'84 P.1 Cách Mạng Tháng 8 Q.5 Tp.HCM','0561516515','021512132','',N'dnt@gmail.com',N'Đặng Nguyên Tấn',N'Quản lý',1)
-
--- BANG NHOM HANG
-
-insert into BANGNHOMHANG values('NH001',N'Điện Thoại','',1),
-								('NH002',N'Son','',1),
-								('NH003',N'Tủ Lạnh','',1),
-								('NH004',N'Laptop','',1),
-								('NH005',N'Nước Hoa','',1),
-								('NH006',N'Hoa Quả','',1),
-								('NH007',N'Gạo','',1),
-								('NH008',N'Nồi Cơm Điện','',1)
-
--- BANG DON VI
-
-insert into BANGDONVI values ('Tan',N'Tấn','',1),
-								('Ta',N'Tạ','',1),
-								('Yen',N'Yến','',1),
-								('kg',N'Kilôgram','',1),
-								('cai',N'Cái','',1),
-								('g',N'Gram','',1),
-								('lo',N'Lọ','',1)
-
---Hàng Hóa
-
-insert into HANGHOA values	(1,0,'K004','NH001','HH00001',N'Samsung Galaxy S8','HH00001','cai',N'Mỹ',10,1000,Null,'NPP004',12000000,Null,Null),
-							(1,0,'K005','NH005','HH00002',N'La Vie Est Belle','HH00002','lo',N'Pháp',5,500,Null,'NPP002',3000000,Null,Null),
-							(1,0,'K001','NH003','HH00003',N'Tủ lạnh French Door','HH00003','cai',N'Hàn Quốc',15,400,Null,'NPP003',44000000,Null,Null),
-							(1,0,'K002','NH008','HH00004',N'Nồi cơm điện Benny BR-19TV','HH00004','cai',N'Việt Nam',5,800,Null,'NPP001',580000,Null,Null)
-
--- BO PHAN
-insert into BOPHAN values	('BP001',N'Đối Ngoại','',1),
-							('BP002',N'Kinh Doanh','',1),
-							('BP003',N'Bán Hàng','',1),
-							('BP004',N'Di Chuyển Hàng Hóa','',1),
-							('BP005',N'Marketing','',1),
-							('BP006',N'Quản Lý Hàng Hóa','',1),
-							('BP007',N'Bảo Trì Hàng Hóa','',1),
-							('BP008',N'Quản Lý Sổ Sách','',1)
+-- KHACHHANG
+insert into khachhang values('KH01','Nguyen Van A','731 Tran Hung Dao, Q5, TpHCM','8823451','22/10/1960','22/07/2006',13060000)
+insert into khachhang values('KH02','Tran Ngoc Han','23/5 Nguyen Trai, Q5, TpHCM','908256478','03/04/1974','30/07/2006',280000)
+insert into khachhang values('KH03','Tran Ngoc Linh','45 Nguyen Canh Chan, Q1, TpHCM','938776266','12/06/1980','08/05/2006',3860000)
+insert into khachhang values('KH04','Tran Minh Long','50/34 Le Dai Hanh, Q10, TpHCM','917325476','09/03/1965','10/02/2006',250000)
+insert into khachhang values('KH05','Le Nhat Minh','34 Truong Dinh, Q3, TpHCM','8246108','10/03/1950','28/10/2006',21000)
+insert into khachhang values('KH06','Le Hoai Thuong','227 Nguyen Van Cu, Q5, TpHCM','8631738','31/12/1981','24/11/2006',915000)
+insert into khachhang values('KH07','Nguyen Van Tam','32/3 Tran Binh Trong, Q5, TpHCM','916783565','06/04/1971','12/01/2006',12500)
+insert into khachhang values('KH08','Phan Thi Thanh','45/2 An Duong Vuong, Q5, TpHCM','938435756','10/01/1971','13/12/2006',365000)
+insert into khachhang values('KH09','Le Ha Vinh','873 Le Hong Phong, Q5, TpHCM','8654763','03/09/1979','14/01/2007',70000)
+insert into khachhang values('KH10','Ha Duy Lap','34/34B Nguyen Trai, Q1, TpHCM','8768904','02/05/1983','16/01/2007',67500)
 
 -------------------------------
--- NHAN VIEN
-insert into nhanvien values('NV001',0,1,N'Nguyễn Như Nhựt',N'Nhân Viên',N'158 P.5 Nguyễn Thị Minh Khai Q.3 Tp.HCM','0927345678','','NNN@gmail.com','','BP002',N'Phạm Thế Hiển'),
-							('NV002',0,1,N'Ngô Thanh Tuyền',N'Nhân Viên',N'32 P.2 Nguyễn Thị Minh Khai Q.3 Tp.HCM','0921651651','','NTT@gmail.com','','BP005',N'Phan Văn Đức'),
-							('NV003',0,1,N'Phan Thị Hồng',N'Nhân Viên',N'68 P.8 Nguyễn Thị Minh Khai Q.3 Tp.HCM','05123216512','','PTH@gmail.com','','BP004',N'Phạm Thu Thủy'),
-							('NV004',0,1,N'Đặng Xuân Bách',N'Nhân Viên',N'215 P.4 Nguyễn Thị Minh Khai Q.3 Tp.HCM','0684235162','','DXB@gmail.com','','BP001',N'Đặng Song Thái'),
-							('NV005',0,1,N'Phạm Văn Quang',N'Nhân Viên',N'298 P.12 Nguyễn Thị Minh Khai Q.3 Tp.HCM','0321654651','','PVQ@gmail.com','','BP007',N'Nguyễn Thị Cẩm'),
-							('NV006',0,1,N'Nguyễn Thế Ân',N'Nhân Viên',N'112 P.1 Nguyễn Thị Minh Khai Q.3 Tp.HCM','098423512','','NTA@gmail.com','','BP006',N'Đào Kim Loan')
+-- NHANVIEN
+insert into nhanvien values('NV01','Nguyen Nhu Nhut','927345678','13/04/2006')
+insert into nhanvien values('NV02','Le Thi Phi Yen','987567390','21/04/2006')
+insert into nhanvien values('NV03','Nguyen Van B','997047382','27/04/2006')
+insert into nhanvien values('NV04','Ngo Thanh Tuan','913758498','24/06/2006')
+insert into nhanvien values('NV05','Nguyen Thi Truc Thanh','918590387','20/07/2006')
 
+-------------------------------
+-- SANPHAM
+insert into sanpham values('BC01','But chi','cay','Singapore',3000)
+insert into sanpham values('BC02','But chi','cay','Singapore',5000)
+insert into sanpham values('BC03','But chi','cay','Viet Nam',3500)
+insert into sanpham values('BC04','But chi','hop','Viet Nam',30000)
+insert into sanpham values('BB01','But bi','cay','Viet Nam',5000)
+insert into sanpham values('BB02','But bi','cay','Trung Quoc',7000)
+insert into sanpham values('BB03','But bi','hop','Thai Lan',100000)
+insert into sanpham values('TV01','Tap 100 giay mong','quyen','Trung Quoc',2500)
+insert into sanpham values('TV02','Tap 200 giay mong','quyen','Trung Quoc',4500)
+insert into sanpham values('TV03','Tap 100 giay tot','quyen','Viet Nam',3000)
+insert into sanpham values('TV04','Tap 200 giay tot','quyen','Viet Nam',5500)
+insert into sanpham values('TV05','Tap 100 trang','chuc','Viet Nam',23000)
+insert into sanpham values('TV06','Tap 200 trang','chuc','Viet Nam',53000)
+insert into sanpham values('TV07','Tap 100 trang','chuc','Trung Quoc',34000)
+insert into sanpham values('ST01','So tay 500 trang','quyen','Trung Quoc',40000)
+insert into sanpham values('ST02','So tay loai 1','quyen','Viet Nam',55000)
+insert into sanpham values('ST03','So tay loai 2','quyen','Viet Nam',51000)
+insert into sanpham values('ST04','So tay','quyen','Thai Lan',55000)
+insert into sanpham values('ST05','So tay mong','quyen','Thai Lan',20000)
+insert into sanpham values('ST06','Phan viet bang','hop','Viet Nam',5000)
+insert into sanpham values('ST07','Phan khong bui','hop','Viet Nam',7000)
+insert into sanpham values('ST08','Bong bang','cai','Viet Nam',1000)
+insert into sanpham values('ST09','But long','cay','Viet Nam',5000)
+insert into sanpham values('ST10','But long','cay','Trung Quoc',7000)
 
+-------------------------------
 -- HOADON
-insert into hoadon values('HD00001','KH0001',950000000,10,5,'23/07/2006','')
-insert into hoadon values('HD00002','KH0001',1200000000,10,5,'12/08/2006','')
-insert into hoadon values('HD00003','KH0001',321000000,10,5,'23/08/2006','')
-insert into hoadon values('HD00004','KH0001',5120000000,10,5,'01/09/2006','')
-insert into hoadon values('HD00005','KH0001',820000000,10,5,'20/10/2006','')
-insert into hoadon values('HD00006','KH0002',680000000,10,5,'16/10/2006','')
-insert into hoadon values('HD00007','KH0002',5300000000,10,5,'28/10/2006','')
-insert into hoadon values('HD00008','KH0002',4230000000,10,5,'28/10/2006','')
-insert into hoadon values('HD00009','KH0002',3310000000,10,5,'28/10/2006','')
-insert into hoadon values('HD00010','KH0002',5000000000,10,5,'01/11/2006','')
-insert into hoadon values('HD00011','KH0003',621000000,10,5,'04/11/2006','')
-insert into hoadon values('HD00012','KH0003',2800000000,10,5,'30/11/2006','')
-insert into hoadon values('HD00013','KH0003',1350000000,10,5,'12/12/2006','')
-insert into hoadon values('HD00014','KH0003',503000000,10,5,'31/12/2006','')
-insert into hoadon values('HD00015','KH0003',2560000000,10,5,'01/01/2007','')
+insert into hoadon values(1001,'23/07/2006','KH01','NV01',320000)
+insert into hoadon values(1002,'12/08/2006','KH01','NV02',840000)
+insert into hoadon values(1003,'23/08/2006','KH02','NV01',100000)
+insert into hoadon values(1004,'01/09/2006','KH02','NV01',180000)
+insert into hoadon values(1005,'20/10/2006','KH01','NV02',3800000)
+insert into hoadon values(1006,'16/10/2006','KH01','NV03',2430000)
+insert into hoadon values(1007,'28/10/2006','KH03','NV03',510000)
+insert into hoadon values(1008,'28/10/2006','KH01','NV03',440000)
+insert into hoadon values(1009,'28/10/2006','KH03','NV04',200000)
+insert into hoadon values(1010,'01/11/2006','KH01','NV01',5200000)
+insert into hoadon values(1011,'04/11/2006','KH04','NV03',250000)
+insert into hoadon values(1012,'30/11/2006','KH05','NV03',21000)
+insert into hoadon values(1013,'12/12/2006','KH06','NV01',5000)
+insert into hoadon values(1014,'31/12/2006','KH03','NV02',3150000)
+insert into hoadon values(1015,'01/01/2007','KH06','NV01',910000)
+insert into hoadon values(1016,'01/01/2007','KH07','NV02',12500)
+insert into hoadon values(1017,'02/01/2007','KH08','NV03',35000)
+insert into hoadon values(1018,'13/01/2007','KH08','NV03',330000)
+insert into hoadon values(1019,'13/01/2007','KH01','NV03',30000)
+insert into hoadon values(1020,'14/01/2007','KH09','NV04',70000)
+insert into hoadon values(1021,'16/01/2007','KH10','NV03',67500)
+insert into hoadon values(1022,'16/01/2007',Null,'NV03',7000)
+insert into hoadon values(1023,'17/01/2007',Null,'NV01',330000)
+
 -------------------------------
 -- CTHD
-insert into cthd values('HD00001','HH00001',10)
-insert into cthd values('HD00001','HH00002',5)
-insert into cthd values('HD00001','HH00003',10)
-insert into cthd values('HD00002','HH00001',20)
-insert into cthd values('HD00002','HH00003',20)
-insert into cthd values('HD00002','HH00002',20)
-insert into cthd values('HD00003','HH00001',10)
-insert into cthd values('HD00004','HH00001',20)
-insert into cthd values('HD00004','HH00002',10)
-insert into cthd values('HD00005','HH00003',50)
-insert into cthd values('HD00006','HH00002',20)
-insert into cthd values('HD00006','HH00001',30)
-insert into cthd values('HD00008','HH00001',8)
-insert into cthd values('HD00009','HH00002',10)
-insert into cthd values('HD00010','HH00003',50)
-insert into cthd values('HD00010','HH00001',50)
-insert into cthd values('HD00010','HH00002',100)
-insert into cthd values('HD00011','HH00003',50)
-insert into cthd values('HD00012','HH00001',3)
-insert into cthd values('HD00013','HH00002',5)
-insert into cthd values('HD00014','HH00003',80)
-insert into cthd values('HD00014','HH00001',100)
-insert into cthd values('HD00014','HH00002',60)
-insert into cthd values('HD00015','HH00002',30)
-insert into cthd values('HD00015','HH00003',7)
+insert into cthd values(1001,'TV02',10)
+insert into cthd values(1001,'ST01',5)
+insert into cthd values(1001,'BC01',5)
+insert into cthd values(1001,'BC02',10)
+insert into cthd values(1001,'ST08',10)
+insert into cthd values(1002,'BC04',20)
+insert into cthd values(1002,'BB01',20)
+insert into cthd values(1002,'BB02',20)
+insert into cthd values(1003,'BB03',10)
+insert into cthd values(1004,'TV01',20)
+insert into cthd values(1004,'TV02',10)
+insert into cthd values(1004,'TV03',10)
+insert into cthd values(1004,'TV04',10)
+insert into cthd values(1005,'TV05',50)
+insert into cthd values(1005,'TV06',50)
+insert into cthd values(1006,'TV07',20)
+insert into cthd values(1006,'ST01',30)
+insert into cthd values(1006,'ST02',10)
+insert into cthd values(1007,'ST03',10)
+insert into cthd values(1008,'ST04',8)
+insert into cthd values(1009,'ST05',10)
+insert into cthd values(1010,'TV07',50)
+insert into cthd values(1010,'ST07',50)
+insert into cthd values(1010,'ST08',100)
+insert into cthd values(1010,'ST04',50)
+insert into cthd values(1010,'TV03',100)
+insert into cthd values(1011,'ST06',50)
+insert into cthd values(1012,'ST07',3)
+insert into cthd values(1013,'ST08',5)
+insert into cthd values(1014,'BC02',80)
+insert into cthd values(1014,'BB02',100)
+insert into cthd values(1014,'BC04',60)
+insert into cthd values(1014,'BB01',50)
+insert into cthd values(1015,'BB02',30)
+insert into cthd values(1015,'BB03',7)
+insert into cthd values(1016,'TV01',5)
+insert into cthd values(1017,'TV02',1)
+insert into cthd values(1017,'TV03',1)
+insert into cthd values(1017,'TV04',5)
+insert into cthd values(1018,'ST04',6)
+insert into cthd values(1019,'ST05',1)
+insert into cthd values(1019,'ST06',2)
+insert into cthd values(1020,'ST07',10)
+insert into cthd values(1021,'ST08',5)
+insert into cthd values(1021,'TV01',7)
+insert into cthd values(1021,'TV02',10)
+insert into cthd values(1022,'ST07',1)
+insert into cthd values(1023,'ST04',6)

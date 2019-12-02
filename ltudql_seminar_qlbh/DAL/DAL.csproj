@@ -33,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,7 +44,6 @@
     <Compile Include="ConnectToSql.cs" />
     <Compile Include="DALDanhMuc\DALDoiTac.cs" />
     <Compile Include="DALDanhMuc\DALKhoHang.cs" />
-    <Compile Include="DALHeThong\DALDuLieu.cs" />
     <Compile Include="DALHeThong\DALHeThong.cs" />
     <Compile Include="DALLogin.cs" />
     <Compile Include="DALHeThong\DALBaoMat.cs" />

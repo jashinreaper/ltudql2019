@@ -25,9 +25,6 @@ namespace ltudql_seminar_qlbh
             {
                 DTOcurrentUser.roleid = bus.getRole(tbUsername.Text);
                 DTOcurrentUser.rolename = bus.getRoleName(tbUsername.Text);
-                DTOcurrentUser.username = tbUsername.Text;
-                //MessageBox.Show(tbUsername.Text);
-                //MessageBox.Show(tbUsername.Text);
                 RibbonFormMain rfm = new RibbonFormMain();
                 rfm.Text = DTOcurrentUser.rolename + " - Phần mềm quản lý bán hàng";
                 this.Visible = false;

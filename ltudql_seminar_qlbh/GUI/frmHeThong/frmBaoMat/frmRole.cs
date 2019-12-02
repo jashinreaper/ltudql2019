@@ -114,6 +114,10 @@ namespace ltudql_seminar_qlbh.MainForm
             //
         }
 
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void textEdit3_EditValueChanged(object sender, EventArgs e)
         {
@@ -132,8 +136,7 @@ namespace ltudql_seminar_qlbh.MainForm
             treelistVaitro.FocusedNode.SetValue("isActived", checkEdit1.Checked);
         }
 
-
-        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void simpleButton2_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("roleID", typeof(string));
@@ -161,11 +164,6 @@ namespace ltudql_seminar_qlbh.MainForm
             {
                 MessageBox.Show("Cập nhật thành công");
             }
-        }
-
-        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
         }
     }
 }

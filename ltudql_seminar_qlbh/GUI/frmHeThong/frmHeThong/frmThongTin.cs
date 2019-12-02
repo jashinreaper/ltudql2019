@@ -19,6 +19,30 @@ namespace ltudql_seminar_qlbh.frmHeThong.frmHeThong
             InitializeComponent();
         }
 
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            BUSHeTHong bus = new BUSHeTHong();
+            DTOThongTin thongTin = new DTOThongTin()
+            {
+                tendonvi = textEdit1.Text,
+                diachi = textEdit2.Text,
+                dienthoai = textEdit3.Text,
+                fax = textEdit4.Text,
+                website = textEdit5.Text,
+                email = textEdit6.Text,
+                gpkd = textEdit8.Text,
+                linhvuc = comboBoxEdit1.Text,
+                masothue = textEdit7.Text
+            };
+            bus.updateLinhVuc(thongTin);
+            MessageBox.Show("Cập nhật thông tin thành công");
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void frmThongTin_Load(object sender, EventArgs e)
         {
             BUSHeTHong bus = new BUSHeTHong();
@@ -46,30 +70,6 @@ namespace ltudql_seminar_qlbh.frmHeThong.frmHeThong
                 }
             }
 
-        }
-
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            BUSHeTHong bus = new BUSHeTHong();
-            DTOThongTin thongTin = new DTOThongTin()
-            {
-                tendonvi = textEdit1.Text,
-                diachi = textEdit2.Text,
-                dienthoai = textEdit3.Text,
-                fax = textEdit4.Text,
-                website = textEdit5.Text,
-                email = textEdit6.Text,
-                gpkd = textEdit8.Text,
-                linhvuc = comboBoxEdit1.Text,
-                masothue = textEdit7.Text
-            };
-            bus.updateLinhVuc(thongTin);
-            MessageBox.Show("Cập nhật thông tin thành công");
-        }
-
-        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
         }
     }
 }
