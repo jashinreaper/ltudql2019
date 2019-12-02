@@ -107,7 +107,7 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "id";
+            this.gridColumn1.Caption = "Khu vực";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
@@ -152,8 +152,6 @@
             this.gridColumn7.Caption = "Loại khách hàng";
             this.gridColumn7.ColumnEdit = this.repositoryItemComboBox1;
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
             // 
             // repositoryItemComboBox1
             // 
@@ -168,7 +166,7 @@
             this.gridColumn8.ColumnEdit = this.repositoryItemCheckEdit1;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.VisibleIndex = 6;
             // 
             // repositoryItemCheckEdit1
             // 

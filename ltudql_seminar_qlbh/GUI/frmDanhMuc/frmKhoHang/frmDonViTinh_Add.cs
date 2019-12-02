@@ -11,13 +11,13 @@ using DevExpress.XtraEditors;
 using BUS;
 using DTO;
 
-namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
+namespace ltudql_seminar_qlbh.frmDanhMuc.frmKhoHang
 {
-    public partial class frmKhuVuc_Add : DevExpress.XtraEditors.XtraForm
+    public partial class frmDonViTinh_Add : DevExpress.XtraEditors.XtraForm
     {
         static bool isAddForm;
         static string gotID;
-        public frmKhuVuc_Add(bool isAdd, string id)
+        public frmDonViTinh_Add(bool isAdd, string id)
         {
             InitializeComponent();
             if (isAdd)
@@ -28,22 +28,21 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            BUSDoiTac b = new BUSDoiTac();
-            DTOKhuVuc d = new DTOKhuVuc();
-            d.MaKhuVuc = textEdit1.Text;
-            d.TenKhuVuc = textEdit2.Text;
+            BUSKhoHang b = new BUSKhoHang();
+            DTODonViTinh d = new DTODonViTinh();
+            d.MaDV = textEdit1.Text;
+            d.TenDV = textEdit2.Text;
             d.GhiChu = textEdit3.Text;
             d.ConQuanLy = checkEdit1.Checked;
-
             if (isAddForm)
             {
-                if (b.insertKhuVuc(d))
+                if (b.insertBangDonVi(d))
                     MessageBox.Show("Thao tác thành công");
                 else MessageBox.Show("Thao tác không thành công");
             }
             else
             {
-                b.updateKhuVuc(d);
+                b.updateBangDonVi(d);
                 MessageBox.Show("Thao tác hóa thành công");
             }
         }
@@ -53,14 +52,14 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
             this.Close();
         }
 
-        private void frmKhuVuc_Add_Load(object sender, EventArgs e)
+        private void frmDonViTinh_Add_Load(object sender, EventArgs e)
         {
             if (!isAddForm)
             {
-                BUSDoiTac b = new BUSDoiTac();
-                DTOKhuVuc dtoHangHoa = b.getKhuVucDetail(gotID);
-                textEdit1.Text = dtoHangHoa.MaKhuVuc;
-                textEdit2.Text = dtoHangHoa.TenKhuVuc;
+                BUSKhoHang b = new BUSKhoHang();
+                DTODonViTinh dtoHangHoa = b.getBanDonViDetail(gotID);
+                textEdit1.Text = dtoHangHoa.MaDV;
+                textEdit2.Text = dtoHangHoa.TenDV;
                 textEdit3.Text = dtoHangHoa.GhiChu;
                 checkEdit1.Checked = dtoHangHoa.ConQuanLy;
             }

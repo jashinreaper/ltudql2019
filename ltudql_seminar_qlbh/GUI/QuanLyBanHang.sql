@@ -106,7 +106,7 @@ Create table KHUVUC(
 -- KHACH HANG
 CREATE TABLE KHACHHANG(
 	id int identity(1,1),
-	MAKH	char(10) not null,
+	MAKH	nvarchar(10) not null,
 	MaKhuVuc nvarchar(30),	
 	HOTEN	nvarchar(40),
 	DiaChi	nvarchar(50),
@@ -133,8 +133,8 @@ CREATE TABLE KHACHHANG(
 -- NHA PHAN PHOI
 CREATE TABLE NHAPHANPHOI(
 	id int identity(1,1),
-	MaNPP	char(10) not null,
-		MaKhuVuc nvarchar(30),	
+	MaNPP	nvarchar(10) not null,
+	MaKhuVuc nvarchar(30),	
 	TenNPP	nvarchar(40),
 	DiaChi	nvarchar(50),
 	MaSoThue nvarchar(20),
@@ -159,7 +159,7 @@ CREATE TABLE NHAPHANPHOI(
 -- KHO
 CREATE TABLE KHO(
 id int identity(1,1),
-	MaKho	char(10) not null,
+	MaKho	nvarchar(10) not null,
 	TenKho	nvarchar(40),
 	DiaChi	nvarchar(50),
 	Fax nvarchar(20),
@@ -167,6 +167,7 @@ id int identity(1,1),
 	Mobile nvarchar(20),
 	Email nvarchar(50),
 	NguoiQuanLy nvarchar(50),
+	NguoiLienHe nvarchar(50),
 	DienGiai nvarchar(50),
 	ConQuanLy bit
 
@@ -175,7 +176,7 @@ id int identity(1,1),
 -- BANG DON VI
 CREATE TABLE BANGDONVI(
 id int identity(1,1),
-	MaDV	char(10) not null,
+	MaDV	nvarchar(10) not null,
 	TenDV	nvarchar(40),
 	GhiChu	nvarchar(50),
 	ConQuanLy bit
@@ -185,7 +186,7 @@ id int identity(1,1),
 -- BANG NHOM HANG
 CREATE TABLE BANGNHOMHANG(
 id int identity(1,1),
-	MaNH	char(10) not null,
+	MaNH	nvarchar(10) not null,
 	TenNH	nvarchar(40),
 	GhiChu	nvarchar(50),
 	ConQuanLy bit
@@ -200,7 +201,7 @@ id int identity(1,1),
 	DichVu bit,
 		MaKhoHang nvarchar(30), 
 	PhanLoai nvarchar(30),
-	MaHH char(10) not null,
+	MaHH nvarchar(10) not null,
 	TENHH	varchar(40),
 	MaVachNSX nvarchar(20),
 		MaDonVi nvarchar(20),
@@ -219,7 +220,7 @@ id int identity(1,1),
 -- BO PHAN
 CREATE TABLE BOPHAN(
 id int identity(1,1),
-	MaBP	char(10) not null,
+	MaBP	nvarchar(10) not null,
 	TenBP	nvarchar(40),
 	GhiChu	nvarchar(50),
 	ConQuanLy bit
@@ -229,7 +230,7 @@ id int identity(1,1),
 -- NHAN VIEN
 CREATE TABLE NHANVIEN(
 id int identity(1,1),
-	MANV	char(10) not null,
+	MANV	nvarchar(10) not null,
 	DocThan bit,
 	ConQuanLy bit,	
 	HOTEN	nvarchar(40),
@@ -298,12 +299,12 @@ insert into NHAPHANPHOI values('NPP001','KVB',N'Benny',N'151 P.2 Điện Biên P
 
 --Kho
 
-insert into KHO values('K001',N'Kho Điện Tử',N'59 P.2 Cách Mạng Tháng 8 Q.5 Tp.HCM','065165132','021651651','',N'pth@gmail.com',N'Phạm Thế Vinh',N'Quản lý',1),
-						('K002',N'Kho Đồ Gia Dụng',N'512 P.2 Cách Mạng Tháng 8 Q.5 Tp.HCM','06212165','021651264','',N'nth@gmail.com',N'Nguyễn Thị Hồng',N'Quản lý',1),
-						('K003',N'Kho Đồ Thủ Công',N'485 P.4 Cách Mạng Tháng 8 Q.3 Tp.HCM','062165416','032151212','',N'dtr@gmail.com',N'Đặng Thị Trân',N'Quản lý',1),
-						('K004',N'Kho Thiết Bị Di Động',N'201 P.8 Cách Mạng Tháng 8 Q.5 Tp.HCM','031651651','0354512316','',N'pvt@gmail.com',N'Phan Văn Tài',N'Quản lý',1),
-						('K005',N'Kho Mỹ Phẩm',N'121 P.11 Cách Mạng Tháng 8 Q.5 Tp.HCM','021561655','065121852','',N'nvd@gmail.com',N'Nguyễn Văn Đức',N'Quản lý',1),
-						('K006',N'Kho Thực Phẩm',N'84 P.1 Cách Mạng Tháng 8 Q.5 Tp.HCM','0561516515','021512132','',N'dnt@gmail.com',N'Đặng Nguyên Tấn',N'Quản lý',1)
+insert into KHO values('K001',N'Kho Điện Tử',N'59 P.2 Cách Mạng Tháng 8 Q.5 Tp.HCM','065165132','021651651','',N'pth@gmail.com',N'Phạm Thế Vinh','',N'Quản lý',1),
+						('K002',N'Kho Đồ Gia Dụng',N'512 P.2 Cách Mạng Tháng 8 Q.5 Tp.HCM','06212165','021651264','',N'nth@gmail.com',N'Nguyễn Thị Hồng','',N'Quản lý',1),
+						('K003',N'Kho Đồ Thủ Công',N'485 P.4 Cách Mạng Tháng 8 Q.3 Tp.HCM','062165416','032151212','',N'dtr@gmail.com',N'Đặng Thị Trân','',N'Quản lý',1),
+						('K004',N'Kho Thiết Bị Di Động',N'201 P.8 Cách Mạng Tháng 8 Q.5 Tp.HCM','031651651','0354512316','',N'pvt@gmail.com',N'Phan Văn Tài','',N'Quản lý',1),
+						('K005',N'Kho Mỹ Phẩm',N'121 P.11 Cách Mạng Tháng 8 Q.5 Tp.HCM','021561655','065121852','',N'nvd@gmail.com',N'Nguyễn Văn Đức','',N'Quản lý',1),
+						('K006',N'Kho Thực Phẩm',N'84 P.1 Cách Mạng Tháng 8 Q.5 Tp.HCM','0561516515','021512132','',N'dnt@gmail.com',N'Đặng Nguyên Tấn','',N'Quản lý',1)
 
 -- BANG NHOM HANG
 
@@ -328,10 +329,10 @@ insert into BANGDONVI values ('Tan',N'Tấn','',1),
 
 --Hàng Hóa
 
-insert into HANGHOA values	(1,0,'K004','NH001','HH00001',N'Samsung Galaxy S8','HH00001','cai',N'Mỹ',10,1000,Null,'NPP004',12000000,Null,Null),
-							(1,0,'K005','NH005','HH00002',N'La Vie Est Belle','HH00002','lo',N'Pháp',5,500,Null,'NPP002',3000000,Null,Null),
-							(1,0,'K001','NH003','HH00003',N'Tủ lạnh French Door','HH00003','cai',N'Hàn Quốc',15,400,Null,'NPP003',44000000,Null,Null),
-							(1,0,'K002','NH008','HH00004',N'Nồi cơm điện Benny BR-19TV','HH00004','cai',N'Việt Nam',5,800,Null,'NPP001',580000,Null,Null)
+insert into HANGHOA values	(1,0,'K004','NH001','HH00001',N'Samsung Galaxy S8','HH00001','cai',N'Mỹ',10,1000,100,'NPP004',12000000,Null,Null),
+							(1,0,'K005','NH005','HH00002',N'La Vie Est Belle','HH00002','lo',N'Pháp',5,500,100,'NPP002',3000000,Null,Null),
+							(1,0,'K001','NH003','HH00003',N'Tủ lạnh French Door','HH00003','cai',N'Hàn Quốc',15,400,100,'NPP003',44000000,Null,Null),
+							(1,0,'K002','NH008','HH00004',N'Nồi cơm điện Benny BR-19TV','HH00004','cai',N'Việt Nam',5,800,100,'NPP001',580000,Null,Null)
 
 -- BO PHAN
 insert into BOPHAN values	('BP001',N'Đối Ngoại','',1),
