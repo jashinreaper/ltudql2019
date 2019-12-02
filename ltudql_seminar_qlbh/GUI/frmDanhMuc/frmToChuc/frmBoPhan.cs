@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace ltudql_seminar_qlbh.frmHeThong.frmToChuc
+namespace ltudql_seminar_qlbh.frmDanhMuc.frmToChuc
 {
     public partial class frmBoPhan : DevExpress.XtraEditors.XtraForm
     {

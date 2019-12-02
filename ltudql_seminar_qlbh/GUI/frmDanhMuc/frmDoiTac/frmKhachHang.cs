@@ -22,11 +22,14 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
         {
             BUSDoiTac um = new BUSDoiTac();
             DataTable dt = um.getKhachHang();
-            gridColumn1.FieldName = "id";
+            gridColumn1.FieldName = "MaKhuVuc";
             gridColumn2.FieldName = "MAKH";
             gridColumn3.FieldName = "HOTEN";
-            gridColumn4.FieldName = "DCHI";
+            gridColumn4.FieldName = "DiaChi";
             gridColumn5.FieldName = "SODT";
+            gridColumn6.FieldName = "Email";
+            gridColumn7.FieldName = "SODT";
+            gridColumn8.FieldName = "ConQuanLy";
             gridControl1.DataSource = dt;
         }
 
@@ -48,8 +51,9 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
             BUSDoiTac um = new BUSDoiTac();
 
             string a = gridView1.GetFocusedRowCellValue("MAKH").ToString();
-            //MessageBox.Show(a);
+
             um.deleteKhachHang(a);
+            MessageBox.Show("Xóa thành công");
         }
     }
 }

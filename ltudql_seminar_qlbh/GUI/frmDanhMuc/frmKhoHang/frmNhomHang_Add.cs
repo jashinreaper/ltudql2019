@@ -10,14 +10,13 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BUS;
 using DTO;
-
-namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
+namespace ltudql_seminar_qlbh.frmDanhMuc
 {
-    public partial class frmKho_Add : DevExpress.XtraEditors.XtraForm
+    public partial class frmNhomHang_Add : DevExpress.XtraEditors.XtraForm
     {
         static bool isAddForm;
         static string gotID;
-        public frmKho_Add(bool isAdd, string id)
+        public frmNhomHang_Add(bool isAdd, string id)
         {
             InitializeComponent();
             if (isAdd)
@@ -26,22 +25,15 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
             gotID = id;
         }
 
-        private void frmKho_Add_Load(object sender, EventArgs e)
+        private void frmNhomHang_Add_Load(object sender, EventArgs e)
         {
             if (!isAddForm)
             {
                 BUSKhoHang b = new BUSKhoHang();
-                DTOKho dtoHangHoa = b.getKhoDetail(gotID);
-                textEdit1.Text = dtoHangHoa.MaKho;
-                textEdit2.Text = dtoHangHoa.TenKho;
-                textEdit3.Text = dtoHangHoa.NguoiLienHe;
-                textEdit4.Text = dtoHangHoa.DiaChi;
-                textEdit5.Text = dtoHangHoa.SODT;
-                textEdit6.Text = dtoHangHoa.Mobile;
-                textEdit7.Text = dtoHangHoa.Fax;
-                textEdit8.Text = dtoHangHoa.Email;
-                textEdit9.Text = dtoHangHoa.NguoiQuanLy;
-                textEdit10.Text = dtoHangHoa.DienGiai;
+                DTONhomHang dtoHangHoa = b.getBangNhomHangDetail(gotID);
+                textEdit1.Text = dtoHangHoa.MaNH;
+                textEdit2.Text = dtoHangHoa.TenNH;
+                textEdit3.Text = dtoHangHoa.GhiChu;
                 checkEdit1.Checked = dtoHangHoa.ConQuanLy;
             }
             else
@@ -53,27 +45,20 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             BUSKhoHang b = new BUSKhoHang();
-            DTOKho d = new DTOKho();
-            d.MaKho = textEdit1.Text;
-            d.TenKho = textEdit2.Text;
-            d.NguoiLienHe = textEdit3.Text;
-            d.DiaChi = textEdit4.Text;
-            d.SODT = textEdit5.Text;
-            d.Mobile = textEdit6.Text;
-            d.Fax = textEdit7.Text;
-            d.Email = textEdit8.Text;
-            d.NguoiQuanLy = textEdit9.Text;
-            d.DienGiai = textEdit10.Text;
+            DTONhomHang d = new DTONhomHang();
+            d.MaNH = textEdit1.Text;
+            d.TenNH = textEdit2.Text;
+            d.GhiChu = textEdit3.Text;
             d.ConQuanLy = checkEdit1.Checked;
             if (isAddForm)
             {
-                if (b.insertKho(d))
+                if (b.insertBangNhomHang(d))
                     MessageBox.Show("Thao tác thành công");
                 else MessageBox.Show("Thao tác không thành công");
             }
             else
             {
-                b.updateKho(d);
+                b.updateBangNhomHang(d);
                 MessageBox.Show("Thao tác hóa thành công");
             }
         }

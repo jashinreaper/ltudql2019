@@ -19,53 +19,39 @@ namespace ltudql_seminar_qlbh.frmDanhMuc.frmDoiTac
             InitializeComponent();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            frmHangHoa_Add frm = new frmHangHoa_Add(true,"");
-            frm.Show();
-        }
-
-        public void getdata()
+        private void gridControl1_Load(object sender, EventArgs e)
         {
             BUSKhoHang um = new BUSKhoHang();
             DataTable dt = um.getHangHoa();
-            dt.Columns[0].ColumnName = "ID";
-            dt.Columns[1].ColumnName = "Mã hàng hóa";
-            dt.Columns[2].ColumnName = "Tên hàng hóa";
-            dt.Columns[3].ColumnName = "Đơn vị tính";
-            //dt.Columns[4].ColumnName = "";
-            dt.Columns[5].ColumnName = "Đơn giá";
-
-            gridColumn1.FieldName = "ID";
-            gridColumn2.FieldName = "Mã hàng hóa";
-            gridColumn3.FieldName = "Tên hàng hóa";
-            gridColumn4.FieldName = "Đơn vị tính";
-            gridColumn5.FieldName = "Đơn giá";
+            gridColumn1.FieldName = "id";
+            gridColumn2.FieldName = "MaHH";
+            gridColumn3.FieldName = "TENHH";
+            gridColumn4.FieldName = "MaDonVi";
+            gridColumn5.FieldName = "GiaMua";
             gridControl1.DataSource = dt;
         }
 
-        private void gridControl1_Load(object sender, EventArgs e)
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            getdata();
+            frmHangHoa_Add frm = new frmHangHoa_Add(true, "");
+            frm.Show();
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmHangHoa_Add frm = new frmHangHoa_Add(false, gridView1.GetFocusedRowCellValue("MaHH").ToString());
+            frm.Show();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             BUSKhoHang um = new BUSKhoHang();
 
-            string a = gridView1.GetFocusedRowCellValue("Mã hàng hóa").ToString();
-            //MessageBox.Show(a);
+            string a = gridView1.GetFocusedRowCellValue("MaHH").ToString();
+
             um.removeHangHoa(a);
-            getdata();
-            gridView1.RefreshData();
-
-
-        }
-
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            frmHangHoa_Add frm = new frmHangHoa_Add(false, gridView1.GetFocusedRowCellValue("Mã hàng hóa").ToString());
-            frm.Show();
+            MessageBox.Show("Xóa thành công");
         }
     }
 }

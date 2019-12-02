@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class DTODonViTinh
+    public class DTODonViTinh
     {
+        public string MaDV { get; set; }
+        public string TenDV { get; set; }
+        public string GhiChu { get; set; }
+        public bool ConQuanLy { get; set; }
     }
 }
